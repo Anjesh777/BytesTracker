@@ -1,0 +1,90 @@
+﻿@page "/"
+@inject Database.DatabaseService DbService
+@inject NavigationManager Nav
+@inject Helper.AuthenticationState AuthState
+@inject Blazored.LocalStorage.ILocalStorageService localStrorage
+
+
+
+
+
+<div class="container w-50">
+    <div class="card mt-5">
+        <div class="card-header">
+            <h3>Login</h3>
+        </div>
+        <div class="card-body">
+            <EditForm Model="@loginModel" OnSubmit="HandleLogin">
+                <div class="form-group">
+                    <label>UserName</label>
+                    <InputText @bind-Value="loginModel.UserName" class="form-control" />
+                </div>
+
+                <div class="form-group mt-3">
+                    <label>Password</label>
+                    <InputText type="password"  @bind-Value="loginModel.Password" class="form-control" />
+                </div>
+
+                <div class="form-group mt-3">
+                    <label>Please Choose Currency</label>
+                    <InputSelect @bind-Value="loginModel.Currency" class="form-control">
+                        <option value="">Select</option>
+                        @foreach (var currency in Helper.Currency.GetAllCurrencies())
+                        {
+                            <option value="@currency.Code">@currency.Name (@currency.Code)</option>
+                        }
+                    </InputSelect>
+                  
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mt-4">Login</button>
+
+                @if (isError)
+                {
+                    <div class="alert alert-danger mt-3">@errorMessage</div>
+                }
+                
+
+            </EditForm>
+        </div>
+    </div>
+</div>
+
+
+
+@code {
+
+    private Model.Login loginModel = new();
+    private bool isError = false;
+    private bool isSuccess = false;
+    private string errorMessage = string.Empty;
+
+    private async Task HandleLogin()
+    {
+        isError = false;
+        isSuccess = false;
+        if (string.IsNullOrWhiteSpace(loginModel.UserName) ||
+               string.IsNullOrWhiteSpace(loginModel.Password) ||
+               string.IsNullOrWhiteSpace(loginModel.Currency))
+        {
+            isError = true;
+            errorMessage = "All fields are required";
+            return;
+        }
+        bool isValid = await DbService.Login_User(loginModel.UserName,loginModel.Password);
+        if (isValid)
+        {
+            await localStrorage.SetItemAsStringAsync("username", loginModel.UserName);
+            AuthState.IsAuthenticated = true;
+            Nav.NavigateTo("/transaction");
+        }
+        else
+        {
+            isError = true;
+            errorMessage = "Invalid username or password";
+        }
+
+            
+    }
+
+
+}

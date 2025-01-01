@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>BytesTracker</id>
+    <version>1.0.0</version>
+    <authors>BytesTracker</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="c451d0a51d7a828827810782dda257e14a576e5e" />
+    <dependencies>
+      <group targetFramework="net8.0-android34.0">
+        <dependency id="Microsoft.AspNetCore.Components.WebView.Maui" version="8.0.82" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Data.Sqlite" version="9.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging.Debug" version="8.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Maui.Controls" version="8.0.82" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Maui.Controls.Compatibility" version="8.0.82" exclude="Build,Analyzers" />
+        <dependency id="MudBlazor" version="7.15.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net8.0-ios17.5">
+        <dependency id="Microsoft.AspNetCore.Components.WebView.Maui" version="8.0.82" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Data.Sqlite" version="9.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging.Debug" version="8.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Maui.Controls" version="8.0.82" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Maui.Controls.Compatibility" version="8.0.82" exclude="Build,Analyzers" />
+        <dependency id="MudBlazor" version="7.15.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net8.0-maccatalyst17.5">
+        <dependency id="Microsoft.AspNetCore.Components.WebView.Maui" version="8.0.82" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Data.Sqlite" version="9.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging.Debug" version="8.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Maui.Controls" version="8.0.82" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Maui.Controls.Compatibility" version="8.0.82" exclude="Build,Analyzers" />
+        <dependency id="MudBlazor" version="7.15.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net8.0-windows10.0.19041">
+        <dependency id="Microsoft.AspNetCore.Components.WebView.Maui" version="8.0.82" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Data.Sqlite" version="9.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging.Debug" version="8.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Maui.Controls" version="8.0.82" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Maui.Controls.Compatibility" version="8.0.82" exclude="Build,Analyzers" />
+        <dependency id="MudBlazor" version="7.15.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\ByteTracker\BytesTracker\bin\Debug\net8.0-android\BytesTracker.runtimeconfig.json" target="lib\net8.0-android34.0\BytesTracker.runtimeconfig.json" />
+    <file src="D:\ByteTracker\BytesTracker\bin\Debug\net8.0-android\BytesTracker.dll" target="lib\net8.0-android34.0\BytesTracker.dll" />
+    <file src="D:\ByteTracker\BytesTracker\bin\Debug\net8.0-android\BytesTracker.xml" target="lib\net8.0-android34.0\BytesTracker.xml" />
+    <file src="D:\ByteTracker\BytesTracker\bin\Debug\net8.0-ios\iossimulator-x64\BytesTracker.runtimeconfig.json" target="lib\net8.0-ios17.5\BytesTracker.runtimeconfig.json" />
+    <file src="D:\ByteTracker\BytesTracker\bin\Debug\net8.0-ios\iossimulator-x64\BytesTracker.dll" target="lib\net8.0-ios17.5\BytesTracker.dll" />
+    <file src="D:\ByteTracker\BytesTracker\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\BytesTracker.runtimeconfig.json" target="lib\net8.0-maccatalyst17.5\BytesTracker.runtimeconfig.json" />
+    <file src="D:\ByteTracker\BytesTracker\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\BytesTracker.dll" target="lib\net8.0-maccatalyst17.5\BytesTracker.dll" />
+    <file src="D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\BytesTracker.runtimeconfig.json" target="lib\net8.0-windows10.0.19041\BytesTracker.runtimeconfig.json" />
+    <file src="D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\BytesTracker.dll" target="lib\net8.0-windows10.0.19041\BytesTracker.dll" />
+    <file src="D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri" target="lib\net8.0-windows10.0.19041\resources.pri" />
+    <file src="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-android\scopedcss\bundle\BytesTracker.styles.css" target="staticwebassets\BytesTracker.styles.css" />
+    <file src="D:\ByteTracker\BytesTracker\wwwroot\css\app.css" target="staticwebassets\css\app.css" />
+    <file src="D:\ByteTracker\BytesTracker\wwwroot\css\bootstrap\bootstrap.min.css" target="staticwebassets\css\bootstrap\bootstrap.min.css" />
+    <file src="D:\ByteTracker\BytesTracker\wwwroot\css\bootstrap\bootstrap.min.css.map" target="staticwebassets\css\bootstrap\bootstrap.min.css.map" />
+    <file src="D:\ByteTracker\BytesTracker\wwwroot\favicon.png" target="staticwebassets\favicon.png" />
+    <file src="D:\ByteTracker\BytesTracker\wwwroot\index.html" target="staticwebassets\index.html" />
+    <file src="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-android\staticwebassets\msbuild.BytesTracker.Microsoft.AspNetCore.StaticWebAssets.props" target="build\Microsoft.AspNetCore.StaticWebAssets.props" />
+    <file src="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-android\staticwebassets\msbuild.build.BytesTracker.props" target="build\BytesTracker.props" />
+    <file src="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-android\staticwebassets\msbuild.buildMultiTargeting.BytesTracker.props" target="buildMultiTargeting\BytesTracker.props" />
+    <file src="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-android\staticwebassets\msbuild.buildTransitive.BytesTracker.props" target="buildTransitive\BytesTracker.props" />
+  </files>
+</package>

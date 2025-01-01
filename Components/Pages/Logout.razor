@@ -1,0 +1,13 @@
+﻿@page "/logout"
+@inject Helper.AuthenticationState AuthState
+@inject NavigationManager Nav
+
+@code {
+    protected override void OnInitialized()
+    {
+        AuthState.IsAuthenticated = false;
+        Nav.NavigateTo("/");
+    }
+
+
+}

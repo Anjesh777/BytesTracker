@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Blazored.LocalStorage;
+using BytesTracker.Database;
+using BytesTracker.Helper;
+using Microsoft.Extensions.Logging;
 
 namespace BytesTracker
 {
@@ -14,10 +17,14 @@ namespace BytesTracker
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 });
 
-            builder.Services.AddMauiBlazorWebView();
 
+            builder.Services.AddMauiBlazorWebView();
+            builder.Services.AddSingleton<AuthenticationState>();
+            builder.Services.AddSingleton<DatabaseService>();
+            builder.Services.AddTransient<MainPage>();
+            builder.Services.AddBlazoredLocalStorage();
 #if DEBUG
-    		builder.Services.AddBlazorWebViewDeveloperTools();
+            builder.Services.AddBlazorWebViewDeveloperTools();
     		builder.Logging.AddDebug();
 #endif
 

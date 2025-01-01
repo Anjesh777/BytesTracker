@@ -1,0 +1,202 @@
+﻿@page "/transaction"
+@inject Database.DatabaseService DbService
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+
+
+
+
+
+<div style="max-width:100%">
+
+    <div class="transaction-container">
+        <div class="header">
+            <div class="title">Income & Expences</div>
+        </div>
+        <div class="summary-cards">
+            <div class="card debit">
+                <div class="amount">Rs 50000</div>
+                <div class="label">Debit</div>
+            </div>
+            <div class="card credit">
+                <div class="amount">Rs 50000</div>
+                <div class="label">Credited</div>
+            </div>
+            <div class="card total">
+                <div class="amount">Rs 50000</div>
+                <div class="label">Total</div>
+            </div>
+        </div>
+
+        <div class="table-controls">
+            <div class="search-box">
+                <input type="search" placeholder="search">
+                <button style="background-color:#007bff; color:white">Search</button>
+            </div>
+            <div class="sort-box">
+                <select>
+                    <option>Sort by</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="form-container">
+    <h1>Create Tags</h1>
+    <EditForm Model="@tagModel" OnSubmit="@HandleSubmit">
+        <div style="padding:10px;">
+            <div class="tagheader">
+                <div>
+                    <label>Tag Name</label>
+                    <InputText @bind-Value="tagModel.TagName" class="custom_form" />
+                </div>
+                <div>
+                    <label>Tag Description</label>
+                    <textarea id="tagDesc" @bind="tagModel.TagDescription" class="custom_form"></textarea>
+
+                </div>
+                <button type="submit" class="btn" style="height:50px; background-color:green; color:white; margin: auto 0;" >Submit</button>
+            </div>
+            @if (isError)
+            {
+                <div class="alert alert-danger mt-3 ">@errorMessage</div>
+                <button type="button" @onclick="CloseErrorPopUp" class="close-btn btn" style="background-color:none; color:red; text-decoration:underline">Close</button>
+            }
+            @if (isSuccess)
+            {
+                <div class="alert alert-success mt-3">Registration successful!</div>
+                <button type="button" @onclick="CloseSuccessPopUp" class="close-btn" style="background-color:none; color:green; text-decoration:underline;">Close</button>
+            }
+        </div>
+    </EditForm>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Tag Id</th>
+                <th>Created At</th>
+                <th>Tag Name</th>
+                <th>Tag Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var tag in userTags)
+            {
+                <tr>
+                    <td>@tag.id</td>
+                    <td>@tag.created_at.ToShortDateString()</td>
+                    <td>@tag.TagName</td>
+                    <td>@tag.TagDescription</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+
+@code {
+
+    private Model.Tags tagModel = new();
+    private bool isError = false;
+    private bool isSuccess = false;
+    private string errorMessage = string.Empty;
+    private List<Database.Tags> userTags = new();
+
+    private void CloseErrorPopUp()
+    {
+        isError = false;
+        errorMessage = string.Empty;
+        StateHasChanged();
+
+    }
+    private void CloseSuccessPopUp()
+    {
+        isSuccess = false;
+        StateHasChanged();
+
+    }
+
+    private async Task getAllTags()
+    {
+        var UserName = await localStorage.GetItemAsync<string>("username");
+        int userID = await DbService.Get_UserID(UserName);
+
+
+        
+    
+    
+    
+    }
+
+
+    private async Task HandleSubmit()
+    {
+
+        try
+        {
+
+            isError = false;
+            isSuccess = false;
+            if (string.IsNullOrWhiteSpace(tagModel.TagName) ||
+                string.IsNullOrWhiteSpace(tagModel.TagDescription))
+            {
+                isError = true;
+                errorMessage = "All fields are required";
+                return;
+            }
+            var UserName = await localStorage.GetItemAsync<string>("username");
+            int userID = await DbService.Get_UserID(UserName);
+
+            var tags = new Database.Tags
+                {
+                    user_id = userID,
+                    TagName = tagModel.TagName,
+                    TagDescription = tagModel.TagDescription
+
+                };
+
+            await DbService.Add_Tag(tags);
+            isSuccess = true;
+            await Task.Delay(1500);
+            userTags = await DbService.Get_Tag(userID);
+            StateHasChanged();
+
+
+        }
+        catch (Exception e)
+        {
+            isError = true;
+            errorMessage = "Adding Tag Failed: " + e.Message;
+        }
+
+    }
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var userName = await localStorage.GetItemAsync<string>("username");
+            int userId = await DbService.Get_UserID(userName);
+            userTags = await DbService.Get_Tag(userId);
+        }
+        catch(Exception e)
+        {
+            
+            isError = true;
+            errorMessage = "Initialization failed: " + e.Message;
+        
+        }
+
+    
+    }
+
+
+
+}
