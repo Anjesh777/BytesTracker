@@ -2,7 +2,7 @@
 using BytesTracker.Database;
 using BytesTracker.Helper;
 using Microsoft.Extensions.Logging;
-
+using BytesTracker.Services;
 namespace BytesTracker
 {
     public static class MauiProgram
@@ -23,6 +23,15 @@ namespace BytesTracker
             builder.Services.AddSingleton<DatabaseService>();
             builder.Services.AddTransient<MainPage>();
             builder.Services.AddBlazoredLocalStorage();
+
+            builder.Services.AddScoped<RegisterService>();
+            builder.Services.AddScoped<LoginService>();
+            builder.Services.AddScoped<TransactionService>();
+            
+
+
+
+
 #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();
     		builder.Logging.AddDebug();

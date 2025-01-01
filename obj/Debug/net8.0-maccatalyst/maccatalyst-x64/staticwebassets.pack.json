@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
+      "Id": "D:\\ByteTracker\\BytesTracker\\wwwroot\\css\\transaction.css",
+      "PackagePath": "staticwebassets\\css\\transaction.css"
+    },
+    {
       "Id": "D:\\ByteTracker\\BytesTracker\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },

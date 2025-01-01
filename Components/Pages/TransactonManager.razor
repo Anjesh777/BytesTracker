@@ -1,7 +1,7 @@
 ﻿@page "/transaction"
-@inject Database.DatabaseService DbService
-@inject Blazored.LocalStorage.ILocalStorageService localStorage
-
+@inject Database.DatabaseService DbService;
+@inject Blazored.LocalStorage.ILocalStorageService localStorage;
+@inject BytesTracker.Services.TransactionService TransactionService
 
 
 
@@ -67,7 +67,7 @@
             }
             @if (isSuccess)
             {
-                <div class="alert alert-success mt-3">Registration successful!</div>
+                <div class="alert alert-success mt-3">Operation successful!</div>
                 <button type="button" @onclick="CloseSuccessPopUp" class="close-btn" style="background-color:none; color:green; text-decoration:underline;">Close</button>
             }
         </div>
@@ -80,6 +80,7 @@
                 <th>Created At</th>
                 <th>Tag Name</th>
                 <th>Tag Description</th>
+               
             </tr>
         </thead>
         <tbody>
@@ -89,7 +90,8 @@
                     <td>@tag.id</td>
                     <td>@tag.created_at.ToShortDateString()</td>
                     <td>@tag.TagName</td>
-                    <td>@tag.TagDescription</td>
+                    <td>@tag.TagDescription  <button @onclick="() => HandleDeleteTag(tag.id)" class="delete-btn">Delete</button></td>
+                    
                 </tr>
             }
         </tbody>
@@ -124,14 +126,26 @@
     private async Task getAllTags()
     {
         var UserName = await localStorage.GetItemAsync<string>("username");
-        int userID = await DbService.Get_UserID(UserName);
+        int userId = await TransactionService.GetUserIdByUsername(UserName);
+        userTags = await TransactionService.GetUserTags(userId);
 
 
-        
-    
-    
-    
     }
+
+    private async Task HandleDeleteTag(int tagID)
+    {
+
+        var UserName = await localStorage.GetItemAsync<string>("username");
+
+        int userId = await TransactionService.GetUserIdByUsername(UserName);
+
+        await TransactionService.DeleteTag(tagID,userId);
+
+        userTags = await DbService.Get_Tag(userId);
+
+        StateHasChanged();
+    }
+
 
 
     private async Task HandleSubmit()

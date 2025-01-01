@@ -2,13 +2,14 @@
 
 namespace BytesTracker.Database
 {
-    internal class DatabaseService
+    public class DatabaseService
     {
 
         private const string DB_Name = "projet_local";
         private readonly SQLiteAsyncConnection _connection;
-        
-        public DatabaseService() { 
+
+        public DatabaseService()
+        {
             _connection = new SQLiteAsyncConnection(Path.Combine(FileSystem.AppDataDirectory, DB_Name));
 
             _connection.CreateTableAsync<Users>();
@@ -17,9 +18,8 @@ namespace BytesTracker.Database
 
 
 
-        }
 
-    
+        }
 
 
         public async Task<bool> IsUserRegistered(string username)
@@ -27,11 +27,16 @@ namespace BytesTracker.Database
             var user = await _connection.Table<Users>().FirstOrDefaultAsync(u => u.UserName == username);
             return user != null;
         }
-        public async Task Create_User(Users users) {
+
+
+        public async Task Create_User(Users users)
+        {
             await _connection.InsertAsync(users);
         }
 
-        public async Task<bool> Login_User(String UserName,String Password) {
+
+        public async Task<bool> Login_User(String UserName, String Password)
+        {
 
             try
             {
@@ -54,7 +59,8 @@ namespace BytesTracker.Database
                 var user = await _connection.Table<Users>().FirstOrDefaultAsync(x => x.UserName == userName);
                 return user?.Id ?? -1;
             }
-            catch {
+            catch
+            {
                 return -1;
             }
         }
@@ -63,6 +69,8 @@ namespace BytesTracker.Database
         {
             await _connection.InsertAsync(tags);
         }
+
+
 
         public async Task<List<Tags>> Get_Tag(int userID)
         {
@@ -75,13 +83,26 @@ namespace BytesTracker.Database
 
                 return tags;
             }
-            catch(Exception e) {
+            catch (Exception e)
+            {
 
                 throw new Exception("Error fetching tags: " + e.Message);
 
             }
-          
+
         }
+
+
+        public async Task Delete_Tag(int tagID, int userID)
+        {
+
+            await _connection.Table<Tags>()
+                    .Where(t => t.id == tagID && t.user_id == userID)
+                    .DeleteAsync();
+
+        }
+
+
 
 
     }

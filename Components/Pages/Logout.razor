@@ -1,11 +1,13 @@
 ﻿@page "/logout"
 @inject Helper.AuthenticationState AuthState
 @inject NavigationManager Nav
+@inject Blazored.LocalStorage.ILocalStorageService localStrorage
 
 @code {
-    protected override void OnInitialized()
+    protected override async void OnInitialized()
     {
         AuthState.IsAuthenticated = false;
+        await localStrorage.RemoveItemAsync("username");
         Nav.NavigateTo("/");
     }
 

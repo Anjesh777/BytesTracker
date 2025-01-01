@@ -17,7 +17,7 @@ namespace BytesTracker.Helper
         {
             return new List<Currency>
             {
-                new Currency { Code = "USD", Name = "US Dollar", Symbol = "$" },
+                new Currency { Code = "USD", Name = "US Dollar", Symbol = "$",  },
                 new Currency { Code = "EUR", Name = "Euro", Symbol = "€" },
                 new Currency { Code = "GBP", Name = "British Pound", Symbol = "£" },
                 new Currency { Code = "JPY", Name = "Japanese Yen", Symbol = "¥" },
