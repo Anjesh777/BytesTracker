@@ -1,8 +1,9 @@
 ﻿using Blazored.LocalStorage;
-using BytesTracker.Database;
+using BytesTracker.Model;
 using BytesTracker.Helper;
 using Microsoft.Extensions.Logging;
 using BytesTracker.Services;
+using SQLite;
 namespace BytesTracker
 {
     public static class MauiProgram
@@ -19,15 +20,31 @@ namespace BytesTracker
 
 
             builder.Services.AddMauiBlazorWebView();
+
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "bytesTracker.db");
+
+            builder.Services.AddSingleton<SQLiteAsyncConnection>(_ =>
+            {
+                var connection = new SQLiteAsyncConnection(dbPath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create | SQLiteOpenFlags.SharedCache);
+                connection.CreateTableAsync<Users>().GetAwaiter().GetResult();
+                connection.CreateTableAsync<Tags>().GetAwaiter().GetResult();
+
+
+
+                return connection;
+            });
+
+
+
             builder.Services.AddSingleton<AuthenticationState>();
-            builder.Services.AddSingleton<DatabaseService>();
             builder.Services.AddTransient<MainPage>();
             builder.Services.AddBlazoredLocalStorage();
 
-            builder.Services.AddScoped<RegisterService>();
-            builder.Services.AddScoped<LoginService>();
-            builder.Services.AddScoped<TransactionService>();
-            
+            builder.Services.AddSingleton<UserService>();
+            builder.Services.AddSingleton<TagService>();
+
+
+
 
 
 

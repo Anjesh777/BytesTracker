@@ -2,7 +2,7 @@
 using SQLiteNetExtensions.Attributes;
 
 
-namespace BytesTracker.Database
+namespace BytesTracker.Model
 {
     [Table("Users")]
     public class Users

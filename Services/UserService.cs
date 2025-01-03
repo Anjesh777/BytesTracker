@@ -1,33 +1,30 @@
-﻿using BytesTracker.Database;
+﻿using BytesTracker.Repository;
+using BytesTracker.Model;
 using SQLite;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BytesTracker.Services
 {
-    public class UserService
+    public class UserService : UserRepo
     {
         private readonly SQLiteAsyncConnection _connection;
-        public UserService(SQLiteAsyncConnection connection)
+
+        public UserService(SQLiteAsyncConnection connection) 
         {
             _connection = connection;
         }
 
-        public async Task<bool> IsUserRegistered(string username)
+        public override async Task<bool> IsUserRegistered(string username)
         {
             var user = await _connection.Table<Users>().FirstOrDefaultAsync(u => u.UserName == username);
             return user != null;
         }
 
-        public async Task Create_User(Users users)
+        public override async Task Create_User(Users users)
         {
             await _connection.InsertAsync(users);
         }
 
-        public async Task<bool> Login_User(String UserName, String Password)
+        public override async Task<bool> Login_User(string UserName, string Password)
         {
             try
             {
@@ -36,27 +33,33 @@ namespace BytesTracker.Services
                     .FirstOrDefaultAsync();
                 return user != null;
             }
-            catch
+            catch (Exception ex)
             {
+                Console.WriteLine($"Error during login: {ex.Message}");
                 return false;
             }
         }
 
-        public async Task<int> Get_UserID(String userName)
+        public override async Task<int> Get_UserID(string userName)
         {
             try
             {
                 var user = await _connection.Table<Users>().FirstOrDefaultAsync(x => x.UserName == userName);
-                return user?.Id ?? -1;
+                return user?.Id ?? -1; 
             }
-            catch
+            catch (Exception ex)
             {
+                Console.WriteLine($"Error fetching user ID: {ex.Message}");
                 return -1;
             }
         }
+
+        public override async Task<int> GetUserIdByUsername(string username)
+        {
+            return await Get_UserID(username);
+        }
+
+
+
     }
-
-
-
-}
 }

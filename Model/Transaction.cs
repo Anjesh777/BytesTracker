@@ -2,24 +2,19 @@
 using SQLiteNetExtensions.Attributes;
 
 
-namespace BytesTracker.Database
+namespace BytesTracker.Model
 {
-    [Table("Tags")]
-    public class Tags
+    [Table("Transaction")]
+    internal class Transaction
     {
-
 
         [PrimaryKey]
         [AutoIncrement]
-        [Column("tag_id")]
+        [Column("transaction_id")]
         public int id { get; set; }
-
         [Column("user_id")]
-
         [ForeignKey(typeof(Users))]
-
         public int user_id { get; set; }
-
         [Column("created_at")]
         public DateTime created_at { get; set; } = DateTime.UtcNow.Date;
 
@@ -27,9 +22,11 @@ namespace BytesTracker.Database
         public string TagName { get; set; }
         [Column("tag_description")]
         public string TagDescription { get; set; }
+        [Column("Amount")]
+        public int Amount { get; set; }
 
 
-        [ManyToOne]
-        public Users User { get; set; }
+
     }
+
 }

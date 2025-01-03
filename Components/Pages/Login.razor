@@ -1,10 +1,9 @@
 ﻿@page "/"
-@inject Database.DatabaseService DbService
 @inject NavigationManager Nav
 @inject Helper.AuthenticationState AuthState
 @inject Blazored.LocalStorage.ILocalStorageService localStrorage
-@inject BytesTracker.Services.LoginService LoginService
-
+@inject BytesTracker.Services.UserService LoginService
+@inject BytesTracker.Services.UserService UserService
 
 
 
@@ -54,7 +53,7 @@
 
 @code {
 
-    private Model.Login loginModel = new();
+    private Dto.Login loginModel = new();
     private bool isError = false;
     private bool isSuccess = false;
     private string errorMessage = string.Empty;
@@ -71,7 +70,7 @@
             errorMessage = "All fields are required";
             return;
         }
-        bool isValid = await LoginService.Login_User(loginModel.UserName,loginModel.Password);
+        bool isValid = await UserService.Login_User(loginModel.UserName,loginModel.Password);
         if (isValid)
         {
             await localStrorage.SetItemAsStringAsync("username", loginModel.UserName);

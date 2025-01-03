@@ -1,16 +1,11 @@
-﻿using BytesTracker.Database;
+﻿using BytesTracker.Model;
 
 
 namespace BytesTracker.Repository
 {
     public abstract class AmountManagerRepo
     {
-        protected readonly DatabaseService DbService;
-
-        protected AmountManagerRepo(DatabaseService dbService)
-        {
-            DbService = dbService;
-        }
+       
 
 
 
