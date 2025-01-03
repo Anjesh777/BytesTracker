@@ -26,74 +26,226 @@
                 <div class="label">Total</div>
             </div>
         </div>
+        @if (showTransPop)
+        {
+            <div class="popup-overlay">
+                <div class="popup-content">
+                    <h2>Amount Manager</h2>
+                    <div>
 
-        <div class="table-controls">
-            <div class="search-box">
-                <input type="search" placeholder="search">
-                <button style="background-color:#007bff; color:white">Search</button>
+                        <div style="display:flex; justify-content:space-around" class="tranparrent">
+                            <div class="transchild">
+                                <p style="text-align:center">Sources:</p>
+                                <input type="text" />
+                            </div>
+                            <div>
+                                <p style="text-align:center">Amount:</p>
+                                <input type="number" />
+                            </div>
+                        </div>
+
+                        <div style="display:flex; justify-content:space-around" class="tranparrent">
+                            <div class="transchild">
+                                <p style="text-align:center">Due Date:</p>
+                                <input type="date" />
+                            </div>
+                            <div>
+                                <p style="text-align:center">Note</p>
+                                <textarea placeholder="Note"></textarea>
+                            </div>
+                        </div>
+
+                        <div style="display:flex; justify-content:space-around" class="tranparrent">
+                            <div>
+                                <p style="text-align:center">Status:</p>
+                                <select>
+                                    <option value="select">Select</option>
+
+                                </select>
+                            </div>
+                            <div style="display:flex">
+                                <div>
+                                    <p style="text-align:center">Type </p>
+                                    <select>
+                                        <option value="select">Select</option>
+                                    </select>
+
+                                </div>
+                                <div>
+                                    <p style="text-align:center">Catagory </p>
+                                    <select>
+                                        <option value="select">Select</option>
+                                    </select>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div>
+                        <button @onclick="ClosetransactionManagerPopUp">Add</button>
+
+                        <button class="close-btn" @onclick="ClosetransactionManagerPopUp">Close</button>
+
+                    </div>
+
+                  
+                </div>
             </div>
-            <div class="sort-box">
-                <select>
-                    <option>Sort by</option>
-                </select>
+        }
+
+
+
+
+        <div class="form-container">
+            <h1 class="title">Transactions</h1>
+            <div class="table-controls">
+                <div class="search-box">
+                    <input type="search" placeholder="search">
+                    <button style="background-color:#007bff; color:white">Search</button>
+                </div>
+                <div class="sort-box">
+                    <select>
+                        <option>Sort by</option>
+                    </select>
+                </div>
+
+            </div>
+            <table class="tags-table">
+                <thead>
+                    <tr>
+                        <th style="width:13%;">Transaction ID</th>
+                        <th style="width:15%;">Created Date</th>
+                        <th style="width:15%;">Due Date</th>
+                        <th style="width:20%;">Title</th>
+                        <th style="width:15%;">Amount</th>
+                        <th style="width:10%;">Type</th>
+                        <th style="width:20%;">Category</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @{
+                        transactioncounter = 15;
+                        int remainingTransactio = transactioncounter;
+                    }
+
+
+                    @foreach (var tag in userTags)
+                    {
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        remainingTransactio--; 
+                    }
+                    @for (int i =1; i < remainingTransactio; i++)
+                    {
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+
+                    }
+
+                </tbody>
+            </table>
+            <div class="button-container">
+                <button id="add-trans" @onclick="ShowtransactionManagerPopUp">Add</button>
             </div>
         </div>
     </div>
-
-
 </div>
 
 
-<div class="form-container">
-    <h1>Create Tags</h1>
-    <EditForm Model="@tagModel" OnSubmit="@HandleSubmit">
-        <div style="padding:10px;">
-            <div class="tagheader">
-                <div>
-                    <label>Tag Name</label>
-                    <InputText @bind-Value="tagModel.TagName" class="custom_form" />
-                </div>
-                <div>
-                    <label>Tag Description</label>
-                    <textarea id="tagDesc" @bind="tagModel.TagDescription" class="custom_form"></textarea>
 
+
+<div class="form-container">
+    <h1 class="title">Create Tags</h1>
+    <EditForm Model="@tagModel" OnSubmit="@HandleSubmit">
+        <div class="form-content">
+            <div class="tagheader">
+                <div class="form-group">
+                    <label class="form-label">Tag Name</label>
+                    <InputText @bind-Value="tagModel.TagName" class="custom-form" />
                 </div>
-                <button type="submit" class="btn" style="height:50px; background-color:green; color:white; margin: auto 0;" >Submit</button>
+                <div class="form-group">
+                    <label class="form-label">Tag Description</label>
+                    <textarea @bind="tagModel.TagDescription" class="custom-form tag-description"></textarea>
+                </div>
+                <button type="submit" class="btn btn-submit">Submit</button>
             </div>
             @if (isError)
             {
-                <div class="alert alert-danger mt-3 ">@errorMessage</div>
-                <button type="button" @onclick="CloseErrorPopUp" class="close-btn btn" style="background-color:none; color:red; text-decoration:underline">Close</button>
+                <div class="alert alert-danger">@errorMessage</div>
+                <button type="button" @onclick="CloseErrorPopUp" class="close-btn">Close</button>
             }
             @if (isSuccess)
             {
-                <div class="alert alert-success mt-3">Operation successful!</div>
-                <button type="button" @onclick="CloseSuccessPopUp" class="close-btn" style="background-color:none; color:green; text-decoration:underline;">Close</button>
+                <div class="alert alert-success">Operation successful!</div>
+                <button type="button" @onclick="CloseSuccessPopUp" class="close-btn">Close</button>
             }
         </div>
     </EditForm>
-
-    <table>
+    <table class="tags-table">
         <thead>
             <tr>
                 <th>Tag Id</th>
                 <th>Created At</th>
                 <th>Tag Name</th>
                 <th>Tag Description</th>
-               
             </tr>
         </thead>
         <tbody>
+            @{
+                tagcounter = 6;
+                int remainingTags = tagcounter;
+            }
+
             @foreach (var tag in userTags)
             {
-                <tr>
-                    <td>@tag.id</td>
-                    <td>@tag.created_at.ToShortDateString()</td>
-                    <td>@tag.TagName</td>
-                    <td>@tag.TagDescription  <button @onclick="() => HandleDeleteTag(tag.id)" class="delete-btn">Delete</button></td>
-                    
-                </tr>
+                @if (remainingTags > 0)
+                {
+
+
+                    <tr>
+                        <td>@tag.id</td>
+                        <td>@tag.created_at.ToShortDateString()</td>
+                        <td>@tag.TagName</td>
+                        <td>@tag.TagDescription <button @onclick="() => HandleDeleteTag(tag.id)" class="delete-btn">Delete</button></td>
+                    </tr>
+
+                    remainingTags--;
+                        
+                }
             }
+
+            @for (int i = 1; i < remainingTags; i++)
+            {
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+            }
+
         </tbody>
     </table>
 </div>
@@ -102,12 +254,32 @@
 
 
 @code {
+    int tagcounter = 0;
+    int transactioncounter = 0;
+
+    private bool showTransPop = false;
+
 
     private Model.Tags tagModel = new();
     private bool isError = false;
     private bool isSuccess = false;
     private string errorMessage = string.Empty;
     private List<Database.Tags> userTags = new();
+
+
+
+    private void ShowtransactionManagerPopUp()
+    {
+        showTransPop = true;
+    }
+
+    private void ClosetransactionManagerPopUp()
+    {
+        showTransPop = false;
+    }
+
+
+
 
     private void CloseErrorPopUp()
     {
@@ -129,7 +301,6 @@
         int userId = await TransactionService.GetUserIdByUsername(UserName);
         userTags = await TransactionService.GetUserTags(userId);
 
-
     }
 
     private async Task HandleDeleteTag(int tagID)
@@ -139,12 +310,13 @@
 
         int userId = await TransactionService.GetUserIdByUsername(UserName);
 
-        await TransactionService.DeleteTag(tagID,userId);
+        await TransactionService.DeleteTag(tagID, userId);
 
         userTags = await DbService.Get_Tag(userId);
 
         StateHasChanged();
     }
+
 
 
 
@@ -200,15 +372,15 @@
             int userId = await DbService.Get_UserID(userName);
             userTags = await DbService.Get_Tag(userId);
         }
-        catch(Exception e)
+        catch (Exception e)
         {
-            
+
             isError = true;
             errorMessage = "Initialization failed: " + e.Message;
-        
+
         }
 
-    
+
     }
 
 

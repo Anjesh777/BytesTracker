@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kt8Qa7AItYjeYxxbRcRTza3w1HrkHub621ijEVaCuh4=",
+  "Hash": "4ZrMjTimR3qnIAbpLUgZe7dsoiRWpkAoabKNszVTuPY=",
   "Source": "BytesTracker",
   "BasePath": "/",
   "Mode": "Root",
@@ -167,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\transaction.css"
+    },
+    {
+      "Identity": "D:\\ByteTracker\\BytesTracker\\wwwroot\\css\\transation2.css",
+      "SourceId": "BytesTracker",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ByteTracker\\BytesTracker\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/transation2.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\transation2.css"
     },
     {
       "Identity": "D:\\ByteTracker\\BytesTracker\\wwwroot\\favicon.png",

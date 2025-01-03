@@ -3,20 +3,68 @@
   "WorkspaceRootPath": "D:\\ByteTracker\\BytesTracker\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|d:\\bytetracker\\bytestracker\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|d:\\bytetracker\\bytestracker\\database\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|solutionrelative:database\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|d:\\bytetracker\\bytestracker\\database\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|solutionrelative:database\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|d:\\bytetracker\\bytestracker\\repository\\databaseservicerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|solutionrelative:repository\\databaseservicerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|d:\\bytetracker\\bytestracker\\services\\registerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|solutionrelative:services\\registerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|d:\\bytetracker\\bytestracker\\services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|solutionrelative:services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|d:\\bytetracker\\bytestracker\\repository\\amountmanagerrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|solutionrelative:repository\\amountmanagerrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|d:\\bytetracker\\bytestracker\\database\\tags.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|solutionrelative:database\\tags.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|d:\\bytetracker\\bytestracker\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|solutionrelative:wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|d:\\bytetracker\\bytestracker\\wwwroot\\css\\transation2.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|solutionrelative:wwwroot\\css\\transation2.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|d:\\bytetracker\\bytestracker\\components\\pages\\transactonmanager.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|solutionrelative:components\\pages\\transactonmanager.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|d:\\bytetracker\\bytestracker\\services\\transactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|solutionrelative:services\\transactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|d:\\bytetracker\\bytestracker\\wwwroot\\css\\transaction.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|solutionrelative:wwwroot\\css\\transaction.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|d:\\bytetracker\\bytestracker\\repository\\transationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|solutionrelative:repository\\transationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|d:\\bytetracker\\bytestracker\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|solutionrelative:components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|d:\\bytetracker\\bytestracker\\model\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|solutionrelative:model\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|d:\\bytetracker\\bytestracker\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|solutionrelative:components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|d:\\bytetracker\\bytestracker\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|solutionrelative:components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|d:\\bytetracker\\bytestracker\\components\\pages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DE2E5218-4366-4AB3-9BDE-AD9F7A14C88A}|BytesTracker.csproj|solutionrelative:components\\pages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,59 +74,214 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TransactionService.cs",
-              "DocumentMoniker": "D:\\ByteTracker\\BytesTracker\\Services\\TransactionService.cs",
-              "RelativeDocumentMoniker": "Services\\TransactionService.cs",
-              "ToolTip": "D:\\ByteTracker\\BytesTracker\\Services\\TransactionService.cs",
-              "RelativeToolTip": "Services\\TransactionService.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAArwCgAAAA2AAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\ByteTracker\\BytesTracker\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService.cs",
+              "ToolTip": "D:\\ByteTracker\\BytesTracker\\Services\\UserService.cs",
+              "RelativeToolTip": "Services\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-01T09:56:54.046Z",
+              "WhenOpened": "2025-01-03T18:08:37.622Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "TransationRepo.cs",
-              "DocumentMoniker": "D:\\ByteTracker\\BytesTracker\\Repository\\TransationRepo.cs",
-              "RelativeDocumentMoniker": "Repository\\TransationRepo.cs",
-              "ToolTip": "D:\\ByteTracker\\BytesTracker\\Repository\\TransationRepo.cs",
-              "RelativeToolTip": "Repository\\TransationRepo.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAABHAAAAAAAAAA==",
+              "Title": "Users.cs",
+              "DocumentMoniker": "D:\\ByteTracker\\BytesTracker\\Database\\Users.cs",
+              "RelativeDocumentMoniker": "Database\\Users.cs",
+              "ToolTip": "D:\\ByteTracker\\BytesTracker\\Database\\Users.cs",
+              "RelativeToolTip": "Database\\Users.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-01T09:54:46.11Z",
+              "WhenOpened": "2025-01-03T18:06:57.137Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TransactonManager.razor",
-              "DocumentMoniker": "D:\\ByteTracker\\BytesTracker\\Components\\Pages\\TransactonManager.razor",
-              "RelativeDocumentMoniker": "Components\\Pages\\TransactonManager.razor",
-              "ToolTip": "D:\\ByteTracker\\BytesTracker\\Components\\Pages\\TransactonManager.razor",
-              "RelativeToolTip": "Components\\Pages\\TransactonManager.razor",
-              "ViewState": "AgIAAKAAAAAAAAAAAAAuwK4AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-01T09:48:10.069Z",
+              "DocumentIndex": 4,
+              "Title": "RegisterService.cs",
+              "DocumentMoniker": "D:\\ByteTracker\\BytesTracker\\Services\\RegisterService.cs",
+              "RelativeDocumentMoniker": "Services\\RegisterService.cs",
+              "ToolTip": "D:\\ByteTracker\\BytesTracker\\Services\\RegisterService.cs",
+              "RelativeToolTip": "Services\\RegisterService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T18:05:08.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginService.cs",
+              "DocumentMoniker": "D:\\ByteTracker\\BytesTracker\\Services\\LoginService.cs",
+              "RelativeDocumentMoniker": "Services\\LoginService.cs",
+              "ToolTip": "D:\\ByteTracker\\BytesTracker\\Services\\LoginService.cs",
+              "RelativeToolTip": "Services\\LoginService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T18:04:19.702Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Login.cs",
-              "DocumentMoniker": "D:\\ByteTracker\\BytesTracker\\Model\\Login.cs",
-              "RelativeDocumentMoniker": "Model\\Login.cs",
-              "ToolTip": "D:\\ByteTracker\\BytesTracker\\Model\\Login.cs",
-              "RelativeToolTip": "Model\\Login.cs",
+              "Title": "DatabaseServiceRepo.cs",
+              "DocumentMoniker": "D:\\ByteTracker\\BytesTracker\\Repository\\DatabaseServiceRepo.cs",
+              "RelativeDocumentMoniker": "Repository\\DatabaseServiceRepo.cs",
+              "ToolTip": "D:\\ByteTracker\\BytesTracker\\Repository\\DatabaseServiceRepo.cs",
+              "RelativeToolTip": "Repository\\DatabaseServiceRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T18:03:10.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AmountManagerRepo.cs",
+              "DocumentMoniker": "D:\\ByteTracker\\BytesTracker\\Repository\\AmountManagerRepo.cs",
+              "RelativeDocumentMoniker": "Repository\\AmountManagerRepo.cs",
+              "ToolTip": "D:\\ByteTracker\\BytesTracker\\Repository\\AmountManagerRepo.cs",
+              "RelativeToolTip": "Repository\\AmountManagerRepo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-01T06:09:50.25Z",
+              "WhenOpened": "2025-01-03T18:03:08.261Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DatabaseService.cs",
+              "DocumentMoniker": "D:\\ByteTracker\\BytesTracker\\Database\\DatabaseService.cs",
+              "RelativeDocumentMoniker": "Database\\DatabaseService.cs",
+              "ToolTip": "D:\\ByteTracker\\BytesTracker\\Database\\DatabaseService.cs",
+              "RelativeToolTip": "Database\\DatabaseService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwGAAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T18:02:02.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Tags.cs",
+              "DocumentMoniker": "D:\\ByteTracker\\BytesTracker\\Database\\Tags.cs",
+              "RelativeDocumentMoniker": "Database\\Tags.cs",
+              "ToolTip": "D:\\ByteTracker\\BytesTracker\\Database\\Tags.cs",
+              "RelativeToolTip": "Database\\Tags.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T18:01:58.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "index.html",
+              "DocumentMoniker": "D:\\ByteTracker\\BytesTracker\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "wwwroot\\index.html",
+              "ToolTip": "D:\\ByteTracker\\BytesTracker\\wwwroot\\index.html",
+              "RelativeToolTip": "wwwroot\\index.html",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-01-03T17:42:05.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "D:\\ByteTracker\\BytesTracker\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Components\\Layout\\NavMenu.razor",
+              "ToolTip": "D:\\ByteTracker\\BytesTracker\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-03T17:41:57.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "D:\\ByteTracker\\BytesTracker\\Components\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "Components\\Layout\\MainLayout.razor",
+              "ToolTip": "D:\\ByteTracker\\BytesTracker\\Components\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "Components\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-03T17:41:52.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "transation2.css",
+              "DocumentMoniker": "D:\\ByteTracker\\BytesTracker\\wwwroot\\css\\transation2.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\transation2.css",
+              "ToolTip": "D:\\ByteTracker\\BytesTracker\\wwwroot\\css\\transation2.css",
+              "RelativeToolTip": "wwwroot\\css\\transation2.css",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAkwCwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-03T17:41:25.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "transaction.css",
+              "DocumentMoniker": "D:\\ByteTracker\\BytesTracker\\wwwroot\\css\\transaction.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\transaction.css",
+              "ToolTip": "D:\\ByteTracker\\BytesTracker\\wwwroot\\css\\transaction.css",
+              "RelativeToolTip": "wwwroot\\css\\transaction.css",
+              "ViewState": "AgIAAAYBAAAAAAAAAAAkwD8BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-03T17:23:00.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TransactonManager.razor",
+              "DocumentMoniker": "D:\\ByteTracker\\BytesTracker\\Components\\Pages\\TransactonManager.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\TransactonManager.razor",
+              "ToolTip": "D:\\ByteTracker\\BytesTracker\\Components\\Pages\\TransactonManager.razor",
+              "RelativeToolTip": "Components\\Pages\\TransactonManager.razor",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB4AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-03T17:13:53.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Login.razor",
+              "DocumentMoniker": "D:\\ByteTracker\\BytesTracker\\Components\\Pages\\Login.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Login.razor",
+              "ToolTip": "D:\\ByteTracker\\BytesTracker\\Components\\Pages\\Login.razor",
+              "RelativeToolTip": "Components\\Pages\\Login.razor",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAwDkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-01T16:18:00.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Register.razor",
+              "DocumentMoniker": "D:\\ByteTracker\\BytesTracker\\Components\\Pages\\Register.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Register.razor",
+              "ToolTip": "D:\\ByteTracker\\BytesTracker\\Components\\Pages\\Register.razor",
+              "RelativeToolTip": "Components\\Pages\\Register.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-01T16:18:15.668Z"
             }
           ]
         }

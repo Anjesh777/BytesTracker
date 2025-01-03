@@ -1,8 +1,9 @@
-﻿using SQLite;
+﻿using BytesTracker.Repository;
+using SQLite;
 
 namespace BytesTracker.Database
 {
-    public class DatabaseService
+    public class DatabaseService : DatabaseServiceRepo
     {
 
         private const string DB_Name = "projet_local";
@@ -101,9 +102,6 @@ namespace BytesTracker.Database
                     .DeleteAsync();
 
         }
-
-
-
 
     }
 }

@@ -52,6 +52,9 @@
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\wwwroot\css\transaction.css">
       <PackagePath>wwwroot\css\transaction.css</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\wwwroot\css\transation2.css">
+      <PackagePath>wwwroot\css\transation2.css</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\wwwroot\favicon.png">
       <PackagePath>wwwroot\favicon.png</PackagePath>
     </AppxPackagedFile>

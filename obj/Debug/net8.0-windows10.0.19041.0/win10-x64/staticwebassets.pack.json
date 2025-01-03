@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\css\\transaction.css"
     },
     {
+      "Id": "D:\\ByteTracker\\BytesTracker\\wwwroot\\css\\transation2.css",
+      "PackagePath": "staticwebassets\\css\\transation2.css"
+    },
+    {
       "Id": "D:\\ByteTracker\\BytesTracker\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },

@@ -1,0 +1,62 @@
+.tranparrent {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.transchild,
+.transchild + div {
+    flex: 1;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+    color: #4b5563;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    background: #f8fafc;
+    transition: 0.2s;
+}
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+        outline: none;
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        background: white;
+    }
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+    button:first-of-type {
+        background: #3b82f6;
+        color: white;
+        margin-right: 1rem;
+    }
+
+.close-btn {
+    background: #ef4444;
+    color: white;
+}
