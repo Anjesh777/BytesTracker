@@ -1,15 +1,26 @@
+using Microsoft.AspNetCore.Components;
+using System.Text.Json;
+
 namespace BytesTracker.Components.Pages
 {
     public partial class TransactonManager
     {
+
+        [Inject]
+        private Dto.Login loginDto { get; set; }
+
+
         int tagcounter = 0;
         int transactioncounter = 0;
 
         private bool showTransPop = false;
 
+        
 
         private Dto.Tags tagModel = new();
         private Dto.Transaction transactionModel = new();
+
+
 
         private bool isError = false;
         private bool isSuccess = false;
@@ -18,7 +29,13 @@ namespace BytesTracker.Components.Pages
         private List<string> tagNames = new();
         private Helper.SourceType selectType;
 
+        private String currencyCode;
+        private String currencySymbol;
 
+        private void StripCurency() {
+
+            var name = loginDto.Currency;
+        }
 
 
         private void ShowtransactionManagerPopUp()
@@ -121,6 +138,12 @@ namespace BytesTracker.Components.Pages
         {
             try
             {
+
+               
+
+
+
+                StripCurency();
                 var userName = await localStorage.GetItemAsync<string>("username");
                 int userId = await userService.Get_UserID(userName);
                 userTags = await tagService.GetUserTags(userId);

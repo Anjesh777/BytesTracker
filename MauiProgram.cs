@@ -1,5 +1,7 @@
 ﻿using Blazored.LocalStorage;
 using BytesTracker.Model;
+using BytesTracker.Dto;
+
 using BytesTracker.Helper;
 using Microsoft.Extensions.Logging;
 using BytesTracker.Services;
@@ -27,7 +29,7 @@ namespace BytesTracker
             {
                 var connection = new SQLiteAsyncConnection(dbPath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create | SQLiteOpenFlags.SharedCache);
                 connection.CreateTableAsync<Users>().GetAwaiter().GetResult();
-                connection.CreateTableAsync<Tags>().GetAwaiter().GetResult();
+                connection.CreateTableAsync<Model.Tags>().GetAwaiter().GetResult();
 
 
 
@@ -42,6 +44,9 @@ namespace BytesTracker
 
             builder.Services.AddSingleton<UserService>();
             builder.Services.AddSingleton<TagService>();
+            builder.Services.AddScoped<Dto.Login>();
+
+
 
 
 

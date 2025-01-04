@@ -3,6 +3,7 @@ namespace BytesTracker.Components.Pages
     public partial class Register
     {
         private Dto.Register registerModel = new();
+       
         private bool isError = false;
         private bool isSuccess = false;
         private string errorMessage = string.Empty;
@@ -27,6 +28,7 @@ namespace BytesTracker.Components.Pages
                 bool isRegistered = await UserService.IsUserRegistered(registerModel.UserName);
                 if (isRegistered)
                 {
+
                     isError = true;
                     errorMessage = "A user with this Name is already registered.";
                     return;
