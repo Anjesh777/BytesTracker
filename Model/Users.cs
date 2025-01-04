@@ -24,8 +24,8 @@ namespace BytesTracker.Model
         public List<Tags> Tags { get; set; }
 
         [Column("amount")]
-
         public int amount { get; set; }
+
 
     }
 }

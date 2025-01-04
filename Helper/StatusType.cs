@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace BytesTracker.Helper
 {
-     enum SourceType
+ 
+
+    enum StatusType
     {
-        Debit,
-        Credit
+        Pendling,
+        Normal,
+        Completed
     }
-  
 
 }

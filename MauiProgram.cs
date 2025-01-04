@@ -30,13 +30,14 @@ namespace BytesTracker
                 var connection = new SQLiteAsyncConnection(dbPath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create | SQLiteOpenFlags.SharedCache);
                 connection.CreateTableAsync<Users>().GetAwaiter().GetResult();
                 connection.CreateTableAsync<Model.Tags>().GetAwaiter().GetResult();
+          //      connection.DropTableAsync<Model.Transaction>();
+                connection.CreateTableAsync<Model.Transaction>().GetAwaiter().GetResult();
 
 
 
                 return connection;
             });
 
-            // Dependency Injection
 
             builder.Services.AddSingleton<AuthenticationState>();
             builder.Services.AddTransient<MainPage>();
@@ -44,7 +45,10 @@ namespace BytesTracker
 
             builder.Services.AddSingleton<UserService>();
             builder.Services.AddSingleton<TagService>();
+            builder.Services.AddSingleton<TransactionService>();
+
             
+
             builder.Services.AddScoped<Dto.User>();
             builder.Services.AddScoped<Dto.Transaction>();
 

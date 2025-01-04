@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BytesTracker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+fd00a33a0702287e799095c34c590527869434c4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+364c2274fad1205d61c99c1a717af69ce1854865")]
 [assembly: System.Reflection.AssemblyProductAttribute("BytesTracker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BytesTracker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

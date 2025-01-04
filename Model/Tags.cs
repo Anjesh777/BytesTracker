@@ -28,7 +28,6 @@ namespace BytesTracker.Model
         [Column("tag_description")]
         public string TagDescription { get; set; }
 
-
         [ManyToOne]
         public Users User { get; set; }
     }

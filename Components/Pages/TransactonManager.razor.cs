@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Components;
-using System.Text.Json;
 
 namespace BytesTracker.Components.Pages
 {
@@ -10,6 +9,7 @@ namespace BytesTracker.Components.Pages
         private Dto.User userDto { get; set; }
         [Inject]
         private Dto.Transaction transactionDto { get; set; }
+
 
 
         private string statusListner;
@@ -27,8 +27,11 @@ namespace BytesTracker.Components.Pages
         private bool isError = false;
         private bool isSuccess = false;
         private string errorMessage = string.Empty;
+
         private List<Model.Tags> userTags = new();
         private List<string> tagNames = new();
+        private List<Model.Transaction> userTransactions = new();
+
         private Helper.SourceType selectType;
 
         private String currencyCode;
@@ -56,10 +59,35 @@ namespace BytesTracker.Components.Pages
         {
             showTransPop = true;
         }
+        private async void AddTransation() {
+            var userName = await localStorage.GetItemAsync<string>("username");
+            var userId = await userService.Get_UserID(userName);
 
-        private void ClosetransactionManagerPopUp()
+
+            var transaction = new Model.Transaction()
+            {
+                user_id = userId,
+                source = transactionDto.Sources,
+                amount = transactionDto.Value,
+                due_at = (DateTime)transactionDto.DueDate,
+                note = transactionDto.Note,
+                status = transactionDto.Status,
+                type = transactionDto.Type,
+                tagid = transactionDto.Tag,
+            };
+
+            await transactioService.AddTransaction(transaction);
+            await Task.Delay(1500);
+            userTransactions = await transactioService.GetTransactions(userId);
+            StateHasChanged();
+
+
+        }
+
+        private async void ClosetransactionManagerPopUp()
         {
             showTransPop = false;
+
         }
 
         private void CloseErrorPopUp()
@@ -97,6 +125,7 @@ namespace BytesTracker.Components.Pages
             await tagService.DeleteTag(tagID, userId);
 
             userTags = await tagService.GetUserTags(userId);
+
 
             StateHasChanged();
         }
@@ -154,13 +183,16 @@ namespace BytesTracker.Components.Pages
             {
 
                 StripCurency();
-
                 var userName = await localStorage.GetItemAsync<string>("username");
                 int userId = await userService.Get_UserID(userName);
                 userTags = await tagService.GetUserTags(userId);
+                userTransactions = await transactioService.GetTransactions(userId);
                 transactionDto = new Dto.Transaction
                 {
-                    Status = Helper.StatusType.Pendling.ToString()
+                    Status = Helper.StatusType.Pendling.ToString(),
+                    Type = Helper.SourceType.Debit.ToString(),
+                    Tag = 0
+
                 };
 
             }
