@@ -8,14 +8,14 @@
             <h3>Register</h3>
         </div>
         <div class="card-body">
-            <EditForm Model="@registerModel" OnSubmit="HandleRegister">
+            <EditForm Model="@userDto" OnSubmit="HandleRegister">
                 <div class="form-group mt-3">
                     <label>UserName</label>
-                    <InputText @bind-Value="registerModel.UserName" class="form-control" />
+                    <InputText @bind-Value="userDto.UserName" class="form-control" />
                 </div>
                 <div class="form-group mt-3">
                     <label>Password</label>
-                    <InputText type="password" @bind-Value="registerModel.Password" class="form-control" />
+                    <InputText type="password" @bind-Value="userDto.Password" class="form-control" />
                 </div>
                 <button type="submit" class="btn btn-primary w-100 mt-4">Register</button>
 

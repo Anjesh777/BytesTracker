@@ -14,20 +14,20 @@
             <h3>Login</h3>
         </div>
         <div class="card-body">
-            <EditForm Model="@loginDto" OnSubmit="HandleLogin">
+            <EditForm Model="@userDto" OnSubmit="HandleLogin">
                 <div class="form-group">
                     <label>UserName</label>
-                    <InputText @bind-Value="loginDto.UserName" class="form-control" />
+                    <InputText @bind-Value="userDto.UserName" class="form-control" />
                 </div>
 
                 <div class="form-group mt-3">
                     <label>Password</label>
-                    <InputText type="password" @bind-Value="loginDto.Password" class="form-control" />
+                    <InputText type="password" @bind-Value="userDto.Password" class="form-control" />
                 </div>
 
                 <div class="form-group mt-3">
                     <label>Please Choose Currency</label>
-                    <InputSelect @bind-Value="loginDto.Currency" class="form-control">
+                    <InputSelect @bind-Value="userDto.Currency" class="form-control">
                         <option value="">Select</option>
                         @foreach (var currency in Helper.Currency.GetAllCurrencies())
                         {

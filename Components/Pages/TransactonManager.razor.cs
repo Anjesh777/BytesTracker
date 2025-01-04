@@ -7,7 +7,7 @@ namespace BytesTracker.Components.Pages
     {
 
         [Inject]
-        private Dto.Login loginDto { get; set; }
+        private Dto.User userDto { get; set; }
 
 
         int tagcounter = 0;
@@ -34,7 +34,9 @@ namespace BytesTracker.Components.Pages
 
         private void StripCurency() {
 
-            var name = loginDto.Currency;
+            var currencyCombined = userDto.Currency.Split('-');
+            currencyCode = currencyCombined[0];
+            currencySymbol = currencyCombined[1];
         }
 
 

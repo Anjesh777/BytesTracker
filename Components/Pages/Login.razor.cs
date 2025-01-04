@@ -8,7 +8,7 @@ namespace BytesTracker.Components.Pages
     {
 
         [Inject]
-        private Dto.Login loginDto { get; set; }
+        private Dto.User userDto { get; set; }
 
         private bool isError = false;
         private bool isSuccess = false;
@@ -23,9 +23,9 @@ namespace BytesTracker.Components.Pages
             isSuccess = false;
 
 
-            if (string.IsNullOrWhiteSpace(loginDto.UserName) ||
-                   string.IsNullOrWhiteSpace(loginDto.Password) ||
-                   string.IsNullOrWhiteSpace(loginDto.Currency))
+            if (string.IsNullOrWhiteSpace(userDto.UserName) ||
+                   string.IsNullOrWhiteSpace(userDto.Password) ||
+                   string.IsNullOrWhiteSpace(userDto.Currency))
             {
                 isError = true;
                 errorMessage = "All fields are required";
@@ -35,12 +35,12 @@ namespace BytesTracker.Components.Pages
           
 
 
-            bool isValid = await UserService.Login_User(loginDto.UserName, loginDto.Password);
+            bool isValid = await UserService.Login_User(userDto.UserName, userDto.Password);
             if (isValid)
             {
 
 
-                await localStrorage.SetItemAsStringAsync("username", loginDto.UserName);
+                await localStrorage.SetItemAsStringAsync("username", userDto.UserName);
                 AuthState.IsAuthenticated = true;
                 Nav.NavigateTo($"/transaction");
 

@@ -44,7 +44,8 @@ namespace BytesTracker
 
             builder.Services.AddSingleton<UserService>();
             builder.Services.AddSingleton<TagService>();
-            builder.Services.AddScoped<Dto.Login>();
+            builder.Services.AddScoped<Dto.User>();
+
 
 
 

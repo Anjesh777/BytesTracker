@@ -2,7 +2,7 @@ namespace BytesTracker.Components.Pages
 {
     public partial class Register
     {
-        private Dto.Register registerModel = new();
+        private Dto.User userDto = new();
        
         private bool isError = false;
         private bool isSuccess = false;
@@ -15,8 +15,8 @@ namespace BytesTracker.Components.Pages
                 isError = false;
                 isSuccess = false;
 
-                if (string.IsNullOrWhiteSpace(registerModel.UserName) ||
-                    string.IsNullOrWhiteSpace(registerModel.Password))
+                if (string.IsNullOrWhiteSpace(userDto.UserName) ||
+                    string.IsNullOrWhiteSpace(userDto.Password))
 
                 {
                     isError = true;
@@ -24,8 +24,8 @@ namespace BytesTracker.Components.Pages
                     return;
                 }
 
-                // Check if the user is already registered
-                bool isRegistered = await UserService.IsUserRegistered(registerModel.UserName);
+                
+                bool isRegistered = await UserService.IsUserRegistered(userDto.UserName);
                 if (isRegistered)
                 {
 
@@ -34,11 +34,11 @@ namespace BytesTracker.Components.Pages
                     return;
                 }
 
-                // Proceed with registration
+                
                 var user = new Model.Users
                 {
-                    UserName = registerModel.UserName,
-                    Password = registerModel.Password
+                    UserName = userDto.UserName,
+                    Password = userDto.Password
                 };
 
                 await UserService.Create_User(user);
