@@ -12,6 +12,5 @@ namespace BytesTracker.Repository
         public abstract Task<bool> IsUserRegistered(string username);
         public abstract Task<int> GetUserIdByUsername(string username);
 
-
     }
 }

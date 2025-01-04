@@ -23,5 +23,9 @@ namespace BytesTracker.Model
         [OneToMany(CascadeOperations = CascadeOperation.All)]    
         public List<Tags> Tags { get; set; }
 
+        [Column("amount")]
+
+        public int amount { get; set; }
+
     }
 }

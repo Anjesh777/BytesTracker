@@ -34,7 +34,7 @@ namespace BytesTracker
                 return connection;
             });
 
-
+            // Dependency Injection
 
             builder.Services.AddSingleton<AuthenticationState>();
             builder.Services.AddTransient<MainPage>();

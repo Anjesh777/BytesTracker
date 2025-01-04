@@ -16,6 +16,7 @@ namespace BytesTracker.Repository
         public abstract Task AddTag(Tags tag);
         public abstract Task DeleteTag(int tagID, int userID);
 
+       // public abstract Task<List<String>> GetUserTagNames(int userId);
 
 
 

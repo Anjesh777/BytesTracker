@@ -1,8 +1,9 @@
 ﻿@page "/transaction"
-@inject Blazored.LocalStorage.ILocalStorageService localStorage;
+@inherits ComponentBase
+
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
 @inject BytesTracker.Services.UserService userService
 @inject BytesTracker.Services.TagService tagService
-
 
 
 
@@ -32,55 +33,68 @@
                 <div class="popup-content">
                     <h2>Amount Manager</h2>
                     <div>
+                        <EditForm Model="@transactionModel">
 
-                        <div style="display:flex; justify-content:space-around" class="tranparrent">
-                            <div class="transchild">
-                                <p style="text-align:center">Sources:</p>
-                                <input type="text" />
-                            </div>
-                            <div>
-                                <p style="text-align:center">Amount:</p>
-                                <input type="number" />
-                            </div>
-                        </div>
-
-                        <div style="display:flex; justify-content:space-around" class="tranparrent">
-                            <div class="transchild">
-                                <p style="text-align:center">Due Date:</p>
-                                <input type="date" />
-                            </div>
-                            <div>
-                                <p style="text-align:center">Note</p>
-                                <textarea placeholder="Note"></textarea>
-                            </div>
-                        </div>
-
-                        <div style="display:flex; justify-content:space-around" class="tranparrent">
-                            <div>
-                                <p style="text-align:center">Status:</p>
-                                <select>
-                                    <option value="select">Select</option>
-
-                                </select>
-                            </div>
-                            <div style="display:flex">
-                                <div>
-                                    <p style="text-align:center">Type </p>
-                                    <select>
-                                        <option value="select">Select</option>
-                                    </select>
-
+                            <div style="display:flex; justify-content:space-around" class="tranparrent">
+                                <div class="transchild">
+                                    <p style="text-align:center">Sources:</p>
+                                    <input @bind-value="transactionModel.Sources" type="text" /> 
                                 </div>
                                 <div>
-                                    <p style="text-align:center">Catagory </p>
+                                    <p style="text-align:center">Amount:</p>
+                                    <input @bind-value ="transactionModel.Value" type="number" />
+                                </div>
+                            </div>
+
+                            <div style="display:flex; justify-content:space-around" class="tranparrent">
+                                <div class="transchild">
+                                    <p style="text-align:center">Due Date:</p>
+                                    <input @bind-value="transactionModel.DueDate" type="date" />
+                                </div>
+                                <div>
+                                    <p style="text-align:center">Note</p>
+                                    <textarea placeholder="Note" @bind="transactionModel.Note"></textarea>
+                                </div>
+                            </div>
+
+                            <div style="display:flex; justify-content:space-around" class="tranparrent">
+                                <div>
+                                    <p style="text-align:center">Status:</p>
                                     <select>
                                         <option value="select">Select</option>
+
                                     </select>
                                 </div>
+                                <div style="display:flex">
+                                    <div>
+                                        <p style="text-align:center">Type </p>
+                                        <select @bind="transactionModel.Type">
+                                            <option value="">Select</option>
+                                            @foreach (Helper.SourceType type in Enum.GetValues(typeof(Helper.SourceType)))
+                                            {
+                                                <option value="@type">@type</option>
+                                            }
+                                        </select>
+
+                                    </div>
+                                    <div>
+                                        <p style="text-align:center">Catagory </p>
+                                        <select>
+                                            @foreach (var tag in userTags)
+                                            {
+                                                <option value="@tag.id">@tag.TagName</option>
+
+                                            }
+                                        </select>
+                                    </div>
 
 
+                                </div>
                             </div>
-                        </div>
+
+
+                        </EditForm>
+                      
 
                     </div>
                     <div>
@@ -146,7 +160,7 @@
 
                         remainingTransactio--; 
                     }
-                    @for (int i =1; i < remainingTransactio; i++)
+                    @for (int i =1; i < remainingTransactio; i++) 
                     {
 
                         <tr>
@@ -253,136 +267,4 @@
 
 
 
-@code {
-    int tagcounter = 0;
-    int transactioncounter = 0;
 
-    private bool showTransPop = false;
-
-
-    private Dto.Tags tagModel = new();
-    private bool isError = false;
-    private bool isSuccess = false;
-    private string errorMessage = string.Empty;
-    private List<Model.Tags> userTags = new();
-
-
-
-    private void ShowtransactionManagerPopUp()
-    {
-        showTransPop = true;
-    }
-
-    private void ClosetransactionManagerPopUp()
-    {
-        showTransPop = false;
-    }
-
-
-
-
-    private void CloseErrorPopUp()
-    {
-        isError = false;
-        errorMessage = string.Empty;
-        StateHasChanged();
-
-    }
-    private void CloseSuccessPopUp()
-    {
-        isSuccess = false;
-        StateHasChanged();
-
-    }
-
-    private async Task getAllTags()
-    {
-        var UserName = await localStorage.GetItemAsync<string>("username");
-        int userId = await userService.GetUserIdByUsername(UserName);
-        userTags = await tagService.GetUserTags(userId);
-
-    }
-
-    private async Task HandleDeleteTag(int tagID)
-    {
-
-        var UserName = await localStorage.GetItemAsync<string>("username");
-
-        int userId = await userService.GetUserIdByUsername(UserName);
-
-        await tagService.DeleteTag(tagID, userId);
-
-        userTags = await tagService.GetUserTags(userId);
-
-        StateHasChanged();
-    }
-
-
-
-
-    private async Task HandleSubmit()
-    {
-
-        try
-        {
-
-            isError = false;
-            isSuccess = false;
-            if (string.IsNullOrWhiteSpace(tagModel.TagName) ||
-                string.IsNullOrWhiteSpace(tagModel.TagDescription))
-            {
-                isError = true;
-                errorMessage = "All fields are required";
-                return;
-            }
-            var UserName = await localStorage.GetItemAsync<string>("username");
-            int userID = await userService.Get_UserID(UserName);
-
-            var tags = new Model.Tags
-                {
-                    user_id = userID,
-                    TagName = tagModel.TagName,
-                    TagDescription = tagModel.TagDescription
-
-                };
-
-            await tagService.AddTag(tags);
-            isSuccess = true;
-            await Task.Delay(1500);
-            userTags = await tagService.GetUserTags(userID);
-            StateHasChanged();
-
-
-        }
-        catch (Exception e)
-        {
-            isError = true;
-            errorMessage = "Adding Tag Failed: " + e.Message;
-        }
-
-    }
-
-
-
-    protected override async Task OnInitializedAsync()
-    {
-        try
-        {
-            var userName = await localStorage.GetItemAsync<string>("username");
-            int userId = await userService.Get_UserID(userName);
-            userTags = await tagService.GetUserTags(userId);
-        }
-        catch (Exception e)
-        {
-
-            isError = true;
-            errorMessage = "Initialization failed: " + e.Message;
-
-        }
-
-
-    }
-
-
-
-}
