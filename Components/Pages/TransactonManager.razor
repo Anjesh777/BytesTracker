@@ -33,43 +33,51 @@
                 <div class="popup-content">
                     <h2>Amount Manager</h2>
                     <div>
-                        <EditForm Model="@transactionModel">
+                        <EditForm Model="@transactionDto">
 
                             <div style="display:flex; justify-content:space-around" class="tranparrent">
                                 <div class="transchild">
                                     <p style="text-align:center">Sources:</p>
-                                    <input @bind-value="transactionModel.Sources" type="text" /> 
+                                    <input @bind="transactionDto.Sources" required type="text" />
                                 </div>
                                 <div>
                                     <p style="text-align:center">Amount:</p>
-                                    <input @bind-value ="transactionModel.Value" type="number" />
+                                    <input @bind="transactionDto.Value" required type="number" />
                                 </div>
                             </div>
 
-                            <div style="display:flex; justify-content:space-around" class="tranparrent">
-                                <div class="transchild">
-                                    <p style="text-align:center">Due Date:</p>
-                                    <input @bind-value="transactionModel.DueDate" type="date" />
-                                </div>
+                            <div style="display:flex; justify-content:space-around"  class="tranparrent">
+                                @if (transactionDto.Status == Helper.StatusType.Pendling.ToString())
+                                
+                                {
+                                    <div class="transchild">
+                                        <p style="text-align:center">Due Date:</p>
+                                        <input @bind="transactionDto.DueDate" required type="date" />
+                                    </div>
+
+                                }
+
+                               
                                 <div>
                                     <p style="text-align:center">Note</p>
-                                    <textarea placeholder="Note" @bind="transactionModel.Note"></textarea>
+                                    <textarea placeholder="Note" @bind="transactionDto.Note"></textarea>
                                 </div>
                             </div>
 
                             <div style="display:flex; justify-content:space-around" class="tranparrent">
                                 <div>
                                     <p style="text-align:center">Status:</p>
-                                    <select>
-                                        <option value="select">Select</option>
-
+                                    <select required @bind="transactionDto.Status">
+                                        @foreach (Helper.StatusType type in Enum.GetValues(typeof(Helper.StatusType)))
+                                        {
+                                            <option value="@type">@type</option>
+                                        }
                                     </select>
                                 </div>
                                 <div style="display:flex">
                                     <div>
                                         <p style="text-align:center">Type </p>
-                                        <select @bind="transactionModel.Type">
-                                            <option value="">Select</option>
+                                        <select required @bind="transactionDto.Type">
                                             @foreach (Helper.SourceType type in Enum.GetValues(typeof(Helper.SourceType)))
                                             {
                                                 <option value="@type">@type</option>

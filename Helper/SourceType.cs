@@ -9,8 +9,12 @@ namespace BytesTracker.Helper
      enum SourceType
     {
         Debit,
-        Credit,
-        Inflow,
-        OutFlow
+        Credit
     }
+    enum StatusType { 
+        Pendling,
+        Normal,
+        Completed
+    }
+
 }

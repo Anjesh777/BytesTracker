@@ -8,8 +8,11 @@ namespace BytesTracker.Components.Pages
 
         [Inject]
         private Dto.User userDto { get; set; }
+        [Inject]
+        private Dto.Transaction transactionDto { get; set; }
 
 
+        private string statusListner;
         int tagcounter = 0;
         int transactioncounter = 0;
 
@@ -18,7 +21,6 @@ namespace BytesTracker.Components.Pages
         
 
         private Dto.Tags tagModel = new();
-        private Dto.Transaction transactionModel = new();
 
 
 
@@ -31,6 +33,16 @@ namespace BytesTracker.Components.Pages
 
         private String currencyCode;
         private String currencySymbol;
+
+
+        private Helper.StatusType selectedStatus = Helper.StatusType.Pendling;
+        private bool onStatusChanage() {
+
+            return true;
+        }
+
+
+
 
         private void StripCurency() {
 
@@ -50,9 +62,6 @@ namespace BytesTracker.Components.Pages
             showTransPop = false;
         }
 
-
-
-
         private void CloseErrorPopUp()
         {
             isError = false;
@@ -60,6 +69,9 @@ namespace BytesTracker.Components.Pages
             StateHasChanged();
 
         }
+
+        
+
         private void CloseSuccessPopUp()
         {
             isSuccess = false;
@@ -141,14 +153,16 @@ namespace BytesTracker.Components.Pages
             try
             {
 
-               
-
-
-
                 StripCurency();
+
                 var userName = await localStorage.GetItemAsync<string>("username");
                 int userId = await userService.Get_UserID(userName);
                 userTags = await tagService.GetUserTags(userId);
+                transactionDto = new Dto.Transaction
+                {
+                    Status = Helper.StatusType.Pendling.ToString()
+                };
+
             }
             catch (Exception e)
             {
