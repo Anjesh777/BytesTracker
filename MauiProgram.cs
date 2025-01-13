@@ -52,7 +52,7 @@ namespace BytesTracker
             builder.Services.AddScoped<Dto.User>();
             builder.Services.AddScoped<Dto.Transaction>();
             builder.Services.AddScoped<Dto.Tags>();
-            
+            builder.Services.AddScoped<Dto.SortFormDTO>();
 
 
 

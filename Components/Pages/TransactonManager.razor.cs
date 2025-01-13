@@ -11,6 +11,11 @@ namespace BytesTracker.Components.Pages
         private Dto.Transaction transactionDto { get; set; }
         [Inject]
         private Dto.Tags tagDto { get; set; }
+        [Inject]
+        private Dto.SortFormDTO sortFormDto { get; set; }
+
+
+
 
         decimal totalCredit;
         decimal totalDebit;
@@ -21,8 +26,10 @@ namespace BytesTracker.Components.Pages
         int transactioncounter = 0;
 
         private bool showTransPop = false;
+        private bool showTransactionSuccessMessage = false;
 
-        
+
+
 
         private Dto.Tags tagModel = new();
 
@@ -42,7 +49,51 @@ namespace BytesTracker.Components.Pages
         private String currencySymbol;
 
 
+        private string selectedSortOption = "Sort by";
+        private bool showTags = false;
+
+
+
+
+
+
+
         private Helper.StatusType selectedStatus = Helper.StatusType.Pendling;
+
+        private async void onSortChange(ChangeEventArgs e) {
+
+            selectedSortOption = e.Value.ToString();
+            sortFormDto.SortBy = selectedSortOption; 
+
+            if (selectedSortOption == "Debit" || selectedSortOption == "Credit" || selectedSortOption == "Date" || selectedSortOption == "Amount")
+            {
+                sortFormDto.showHighLow = true;
+            }
+            else {
+                sortFormDto.showHighLow = false;
+
+            }
+
+
+            if (selectedSortOption == "Tag")
+            {
+                sortFormDto.showTags = true;
+
+
+            }
+            else {
+
+                sortFormDto.showTags = false;
+
+            }
+
+            StateHasChanged();
+
+        }
+
+        
+
+
         private bool onStatusChanage() {
 
             return true;
@@ -67,6 +118,7 @@ namespace BytesTracker.Components.Pages
             var userName = await localStorage.GetItemAsync<string>("username");
             var userId = await userService.Get_UserID(userName);
 
+            showTransactionSuccessMessage = true;
 
             var transaction = new Model.Transaction()
             {
@@ -86,6 +138,9 @@ namespace BytesTracker.Components.Pages
             totalCredit = await transactioService.GetTotalCredit(userId);
             totalDebit = await transactioService.GetTotalDebit(userId);
             totalBalance = totalCredit - totalDebit;
+
+
+
             StateHasChanged();
 
 
@@ -110,6 +165,7 @@ namespace BytesTracker.Components.Pages
 
         private void CloseSuccessPopUp()
         {
+            showTransactionSuccessMessage = false;
             isSuccess = false;
             StateHasChanged();
 
@@ -121,6 +177,14 @@ namespace BytesTracker.Components.Pages
             int userId = await userService.GetUserIdByUsername(UserName);
             userTags = await tagService.GetUserTags(userId);
 
+        }
+
+        private async Task TransanctionSort() {
+
+            var userName = await localStorage.GetItemAsync<string>("username");
+            var userId = await userService.GetUserIdByUsername(userName);
+            userTransactions = await transactioService.GetSortedTransaction(userId, sortFormDto);
+            StateHasChanged();
         }
 
         private async Task HandleDeleteTag(int tagID)

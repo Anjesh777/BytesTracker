@@ -25,6 +25,7 @@ namespace BytesTracker.Services
             {
                 return await _connection.Table<Transaction>()
                     .Where(transaction => transaction.user_id == userID)
+                    .OrderByDescending(transaction => transaction.user_id)
                     .ToListAsync();
             }
             catch (Exception e)
@@ -61,9 +62,102 @@ namespace BytesTracker.Services
             return debit.Sum(totaldebit => totaldebit.amount);
         }
 
+        public override async Task<List<Transaction>> GetSortedTransaction(int userId, Dto.SortFormDTO sortForm)
+        {
+            var sortTransancation = _connection.Table<Transaction>()
+                .Where(transaction => transaction.user_id == userId);
+
+            if (!string.IsNullOrEmpty(sortForm.SearchTerm) ) {
+
+                var searchTerm = sortForm.SearchTerm.ToLower();
+                bool isNumeric = decimal.TryParse(sortForm.SearchTerm, out decimal searchAmount);
+
+
+                if (isNumeric)
+                {
+
+                    sortTransancation = sortTransancation.Where(transaction =>
+                    transaction.amount == searchAmount);
+
+
+                }
+                else
+                {
+                        sortTransancation = sortTransancation.Where(transaction =>
+                        transaction.source.ToLower().Contains(searchTerm) ||
+                        transaction.type.ToLower().Contains(searchTerm) ||
+                        transaction.tagname.ToLower().Contains(searchTerm) ||
+                        transaction.note.ToLower().Contains(searchTerm) ||
+                        transaction.status.ToLower().Contains(searchTerm)
+                    );
+                }
 
 
 
 
+            }
+            switch (sortForm.SortBy)
+            {
+                case "Date":
+                    if (sortForm.SortOrder == "High")
+                    {
+                        sortTransancation = sortTransancation.OrderByDescending(trans => trans.created_at);
+                    }
+                    else
+                    {
+                        sortTransancation = sortTransancation.OrderBy(t => t.created_at);
+                    }
+                    break;
+
+                case "Amount":
+                    if (sortForm.SortOrder == "High")
+                    {
+                        sortTransancation = sortTransancation.OrderByDescending(trans => trans.amount);
+                    }
+                    else
+                    {
+                        sortTransancation = sortTransancation.OrderBy(trans => trans.amount);
+                    }
+                    break;
+
+                case "Debit":
+                    sortTransancation = sortTransancation.Where(trans => trans.type.ToLower() == "debit");
+                    if (sortForm.SortOrder == "High")
+                    {
+                        sortTransancation = sortTransancation.OrderByDescending(trans  => trans.amount);
+                    }
+                    else
+                    {
+                        sortTransancation = sortTransancation.OrderBy(trans => trans.amount);
+                    }
+                    break;
+
+                case "Credit":
+                    sortTransancation = sortTransancation.Where(trans => trans.type.ToLower() == "credit");
+                    if (sortForm.SortOrder == "High")
+                    {
+                        sortTransancation = sortTransancation.OrderByDescending(trans => trans.amount);
+                    }
+                    else
+                    {
+                        sortTransancation = sortTransancation.OrderBy(trans => trans.amount);
+                    }
+                    break;
+
+                case "Tag":
+                    if (!string.IsNullOrEmpty(sortForm.TagName))
+                    {
+                        sortTransancation = sortTransancation.Where(trans => trans.tagname.ToLower() == sortForm.TagName.ToLower());
+                    }
+                    break;
+
+                default:
+                    sortTransancation = sortTransancation.OrderByDescending(t => t.created_at);
+                    break;
+            }
+
+            return await sortTransancation.ToListAsync();
+
+        }
     }
 }

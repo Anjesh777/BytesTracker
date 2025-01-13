@@ -122,8 +122,17 @@
                     </div>
                     <div>
                         <button @onclick="AddTransation">Add</button>
+                        @if (showTransactionSuccessMessage)
+                        {
+                            <div class="alert alert-success">Transaction added successful!</div>
+                            <button type="button" @onclick="CloseSuccessPopUp" class="close-btn">Close</button>
+                        }
 
-                        <button class="close-btn" @onclick="ClosetransactionManagerPopUp">Close</button>
+                        @if (!showTransactionSuccessMessage)
+                        {
+                            <button class="close-btn" @onclick="ClosetransactionManagerPopUp">Close</button>
+                        }
+
 
                     </div>
 
@@ -137,18 +146,73 @@
 
         <div class="form-container">
             <h1 class="title">Transactions</h1>
-            <div class="table-controls">
-                <div class="search-box">
-                    <input type="search" placeholder="search">
-                    <button style="background-color:#007bff; color:white">Search</button>
+
+
+
+
+            <EditForm Model="@sortFormDto">
+
+            <div class="table-controls" style="display:flex" >
+                
+
+                <div class="search-box" >
+                    <InputText @bind-Value="sortFormDto.SearchTerm" class="form-control" placeholder="search" />
+                        <button style="background-color:#007bff; color:white" @onclick="TransanctionSort">Search</button>
                 </div>
-                <div class="sort-box">
-                    <select>
+                <div class="sort-box" style="display:flex">
+                    <select @onchange="onSortChange" value="@sortFormDto.SortBy">
+
                         <option>Sort by</option>
+                        <option value="Date">Date</option>
+                        <option value="Amount">Amount</option>
+                        <option value="Debit">Debit</option>
+                        <option value="Credit">Credit</option>
+                        <option value="Tag">Tag</option>
                     </select>
+
+
+
+                    @if (sortFormDto.showHighLow)
+                    {
+                           
+
+                        <div style="margin:0px 1%; width:150px;">
+                                <InputSelect @bind-Value="sortFormDto.SortOrder"
+                                             @onchange="onSortChange"
+                                             class="form-control">
+                                    <option value="High">High</option>
+                                    <option value="Low">Low</option>
+                                </InputSelect>
+                        </div>           
+                    }
+                    @if (sortFormDto.showTags)
+                    {
+                       
+                        <div style="margin:0px 1%; width:150px;">
+                                <InputSelect @bind-Value="sortFormDto.TagName" @onchange="onSortChange">
+
+                                    @foreach (var tag in userTags)
+                                    {
+                                        <option>Select</option>
+                                        <option value="@tag.TagName">@tag.TagName</option>
+                                    }
+                                
+                                </InputSelect>
+                         
+                        </div>
+                    }
+
+                 
+
+                    
+
+                    
+
                 </div>
 
             </div>
+            </EditForm>
+
             <table class="tags-table">
                 <thead>
                     <tr>
