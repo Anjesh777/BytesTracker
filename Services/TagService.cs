@@ -26,6 +26,7 @@ namespace BytesTracker.Services
                {
                     return await _connection.Table<Tags>()
                         .Where(tag => tag.user_id == userID)
+                        .OrderByDescending(tag => tag.created_at)
                         .ToListAsync();
                }
                catch (Exception e)
@@ -41,20 +42,20 @@ namespace BytesTracker.Services
                     .DeleteAsync();
             }
 
-        //public override async Task<List<string>> GetUserTagNames(int userId)
-        //{
-        //    try
-        //    {
-        //        var tag= await GetUserTags(userId);
-        //        return tag.Select(tag => tag.TagName).ToList();
-        //    }
-        //    catch (Exception e) {
-                
-        //        throw new Exception("Error fetching tag names: " + e.Message);
+        public async Task<Tags> GetTagById(int tagId)
+        {
+            try
+            {
+                return await _connection.Table<Tags>()
+                    .Where(t => t.id == tagId)
+                    .FirstOrDefaultAsync();
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Error fetching tag {tagId}: {e.Message}", e);
+            }
+        }
 
-        //    }
-
-        //}
 
 
     }

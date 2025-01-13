@@ -6,6 +6,7 @@ D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Bytes
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\BytesTracker.pdb
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml
+D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Blazored.LocalStorage.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.AspNetCore.Authorization.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.AspNetCore.Components.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.AspNetCore.Components.Forms.dll
@@ -13,6 +14,7 @@ D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Micro
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.AspNetCore.Components.WebView.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.AspNetCore.Components.WebView.Maui.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.AspNetCore.Metadata.dll
+D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Data.Sqlite.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Configuration.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Configuration.Abstractions.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Configuration.Binder.dll
@@ -25,6 +27,8 @@ D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Micro
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.FileProviders.Embedded.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.FileProviders.Physical.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Localization.dll
+D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Localization.Abstractions.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Logging.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Logging.Abstractions.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Logging.Debug.dll
@@ -55,6 +59,13 @@ D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Micro
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.System.Projection.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.Widgets.Projection.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.WindowsAppRuntime.Bootstrap.Net.dll
+D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MudBlazor.dll
+D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll
+D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\SQLite-net.dll
+D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\SQLiteNetExtensions.dll
+D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.batteries_v2.dll
+D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.core.dll
+D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.provider.e_sqlite3.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\System.IO.Pipelines.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\ar\Microsoft.Maui.Controls.resources.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\ca\Microsoft.Maui.Controls.resources.dll
@@ -92,6 +103,7 @@ D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\zh-Ha
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\zh-Hant\Microsoft.Maui.Controls.resources.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Graphics.Canvas.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.WindowsAppRuntime.Bootstrap.dll
+D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\e_sqlite3.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.SDK.NET.dll
 D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\WinRT.Runtime.dll
 D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\BytesTracker.csproj.AssemblyReference.cache
@@ -206,15 +218,3 @@ D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\quali
 D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
-D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Localization.dll
-D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Localization.Abstractions.dll
-D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MudBlazor.dll
-D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Data.Sqlite.dll
-D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.batteries_v2.dll
-D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.core.dll
-D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.provider.e_sqlite3.dll
-D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\e_sqlite3.dll
-D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\SQLite-net.dll
-D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll
-D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\SQLiteNetExtensions.dll
-D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Blazored.LocalStorage.dll

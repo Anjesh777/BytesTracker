@@ -30,25 +30,25 @@
     <AppXManifest Include="D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-01-04T18:39:49.874</Modified>
+      <Modified>2025-01-13T08:33:19.174</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-01-03T17:42:27.867</Modified>
+      <Modified>2025-01-05T12:30:57.017</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\BytesTracker.runtimeconfig.json">
       <PackagePath>BytesTracker.runtimeconfig.json</PackagePath>
-      <Modified>2024-12-31T17:47:02.609</Modified>
+      <Modified>2025-01-05T12:30:56.749</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\BytesTracker.dll">
       <PackagePath>BytesTracker.dll</PackagePath>
-      <Modified>2025-01-04T18:39:49.683</Modified>
+      <Modified>2025-01-13T08:33:18.984</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>BytesTracker.exe</PackagePath>
-      <Modified>2025-01-04T18:39:49.687</Modified>
+      <Modified>2025-01-13T08:33:18.988</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -84,23 +84,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2024-12-18T13:16:25.750</Modified>
+      <Modified>2025-01-05T12:30:25.451</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2024-12-18T13:16:25.760</Modified>
+      <Modified>2025-01-05T12:30:25.460</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2024-12-18T13:16:25.775</Modified>
+      <Modified>2025-01-05T12:30:25.494</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2024-12-18T13:16:25.797</Modified>
+      <Modified>2025-01-05T12:30:25.514</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2024-12-18T13:16:25.881</Modified>
+      <Modified>2025-01-05T12:30:25.690</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
@@ -108,211 +108,211 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2024-12-30T16:47:41.345</Modified>
+      <Modified>2025-01-05T12:30:26.720</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.341</Modified>
+      <Modified>2025-01-05T12:30:26.699</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.341</Modified>
+      <Modified>2025-01-05T12:30:26.698</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.341</Modified>
+      <Modified>2025-01-05T12:30:26.696</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.341</Modified>
+      <Modified>2025-01-05T12:30:26.694</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.340</Modified>
+      <Modified>2025-01-05T12:30:26.692</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.343</Modified>
+      <Modified>2025-01-05T12:30:26.716</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.343</Modified>
+      <Modified>2025-01-05T12:30:26.716</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.343</Modified>
+      <Modified>2025-01-05T12:30:26.715</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.343</Modified>
+      <Modified>2025-01-05T12:30:26.716</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.343</Modified>
+      <Modified>2025-01-05T12:30:26.715</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.344</Modified>
+      <Modified>2025-01-05T12:30:26.718</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.344</Modified>
+      <Modified>2025-01-05T12:30:26.717</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.343</Modified>
+      <Modified>2025-01-05T12:30:26.716</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.344</Modified>
+      <Modified>2025-01-05T12:30:26.717</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.344</Modified>
+      <Modified>2025-01-05T12:30:26.717</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.345</Modified>
+      <Modified>2025-01-05T12:30:26.720</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.345</Modified>
+      <Modified>2025-01-05T12:30:26.720</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.344</Modified>
+      <Modified>2025-01-05T12:30:26.720</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.344</Modified>
+      <Modified>2025-01-05T12:30:26.719</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.344</Modified>
+      <Modified>2025-01-05T12:30:26.719</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.344</Modified>
+      <Modified>2025-01-05T12:30:26.719</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.344</Modified>
+      <Modified>2025-01-05T12:30:26.719</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.344</Modified>
+      <Modified>2025-01-05T12:30:26.718</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.344</Modified>
+      <Modified>2025-01-05T12:30:26.718</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.344</Modified>
+      <Modified>2025-01-05T12:30:26.718</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.342</Modified>
+      <Modified>2025-01-05T12:30:26.712</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.342</Modified>
+      <Modified>2025-01-05T12:30:26.712</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.342</Modified>
+      <Modified>2025-01-05T12:30:26.712</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.342</Modified>
+      <Modified>2025-01-05T12:30:26.711</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.342</Modified>
+      <Modified>2025-01-05T12:30:26.710</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.343</Modified>
+      <Modified>2025-01-05T12:30:26.713</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.342</Modified>
+      <Modified>2025-01-05T12:30:26.713</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.342</Modified>
+      <Modified>2025-01-05T12:30:26.713</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.342</Modified>
+      <Modified>2025-01-05T12:30:26.713</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.342</Modified>
+      <Modified>2025-01-05T12:30:26.712</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.343</Modified>
+      <Modified>2025-01-05T12:30:26.715</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.343</Modified>
+      <Modified>2025-01-05T12:30:26.714</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.343</Modified>
+      <Modified>2025-01-05T12:30:26.714</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.343</Modified>
+      <Modified>2025-01-05T12:30:26.714</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.343</Modified>
+      <Modified>2025-01-05T12:30:26.714</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.342</Modified>
+      <Modified>2025-01-05T12:30:26.709</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.342</Modified>
+      <Modified>2025-01-05T12:30:26.706</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.341</Modified>
+      <Modified>2025-01-05T12:30:26.704</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.341</Modified>
+      <Modified>2025-01-05T12:30:26.702</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.341</Modified>
+      <Modified>2025-01-05T12:30:26.701</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.340</Modified>
+      <Modified>2025-01-05T12:30:26.721</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.340</Modified>
+      <Modified>2025-01-05T12:30:26.720</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.340</Modified>
+      <Modified>2025-01-05T12:30:26.720</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.340</Modified>
+      <Modified>2025-01-05T12:30:26.720</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2024-12-30T16:47:41.340</Modified>
+      <Modified>2025-01-05T12:30:26.720</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\BytesTracker.deps.json">
       <PackagePath>BytesTracker.deps.json</PackagePath>
-      <Modified>2025-01-01T07:01:42.657</Modified>
+      <Modified>2025-01-05T12:30:56.618</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anjes\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.34\lib\net6.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
@@ -736,11 +736,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\BytesTracker.styles.css">
       <PackagePath>wwwroot\BytesTracker.styles.css</PackagePath>
-      <Modified>2024-12-18T13:16:24.004</Modified>
+      <Modified>2025-01-05T12:30:23.542</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\BytesTracker.bundle.scp.css">
       <PackagePath>wwwroot\BytesTracker.bundle.scp.css</PackagePath>
-      <Modified>2024-12-18T13:16:24.005</Modified>
+      <Modified>2025-01-05T12:30:23.542</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\Components\Layout\MainLayout.razor.css">
       <PackagePath>Components\Layout\MainLayout.razor.css</PackagePath>

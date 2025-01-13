@@ -9,8 +9,12 @@ namespace BytesTracker.Components.Pages
         private Dto.User userDto { get; set; }
         [Inject]
         private Dto.Transaction transactionDto { get; set; }
+        [Inject]
+        private Dto.Tags tagDto { get; set; }
 
-
+        decimal totalCredit;
+        decimal totalDebit;
+        decimal totalBalance;
 
         private string statusListner;
         int tagcounter = 0;
@@ -73,12 +77,15 @@ namespace BytesTracker.Components.Pages
                 note = transactionDto.Note,
                 status = transactionDto.Status,
                 type = transactionDto.Type,
-                tagid = transactionDto.Tag,
+                tagname = tagDto.TagName
             };
 
             await transactioService.AddTransaction(transaction);
             await Task.Delay(1500);
             userTransactions = await transactioService.GetTransactions(userId);
+            totalCredit = await transactioService.GetTotalCredit(userId);
+            totalDebit = await transactioService.GetTotalDebit(userId);
+            totalBalance = totalCredit - totalDebit;
             StateHasChanged();
 
 
@@ -87,6 +94,7 @@ namespace BytesTracker.Components.Pages
         private async void ClosetransactionManagerPopUp()
         {
             showTransPop = false;
+
 
         }
 
@@ -190,10 +198,13 @@ namespace BytesTracker.Components.Pages
                 transactionDto = new Dto.Transaction
                 {
                     Status = Helper.StatusType.Pendling.ToString(),
-                    Type = Helper.SourceType.Debit.ToString(),
-                    Tag = 0
+                    Type = Helper.SourceType.Debit.ToString()
 
                 };
+
+                totalCredit = await transactioService.GetTotalCredit(userId);
+                totalDebit = await transactioService.GetTotalDebit(userId);
+                totalBalance = totalCredit - totalDebit;
 
             }
             catch (Exception e)

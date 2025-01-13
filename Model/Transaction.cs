@@ -39,8 +39,8 @@ namespace BytesTracker.Model
         public string type { get; set; }
  
 
-        [Column("tagid")]
-        public int tagid { get; set; }
+        [Column("tagname")]
+        public string tagname { get; set; }
         
 
 

@@ -14,6 +14,5 @@ namespace BytesTracker.Dto
         public string Note { get; set; }
         public string Status { get; set; }
         public string Type { get; set; }
-        public int Tag { get; set; }
     }
 }

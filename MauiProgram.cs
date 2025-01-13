@@ -30,7 +30,7 @@ namespace BytesTracker
                 var connection = new SQLiteAsyncConnection(dbPath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create | SQLiteOpenFlags.SharedCache);
                 connection.CreateTableAsync<Users>().GetAwaiter().GetResult();
                 connection.CreateTableAsync<Model.Tags>().GetAwaiter().GetResult();
-          //      connection.DropTableAsync<Model.Transaction>();
+            //    connection.DropTableAsync<Model.Transaction>();
                 connection.CreateTableAsync<Model.Transaction>().GetAwaiter().GetResult();
 
 
@@ -51,7 +51,8 @@ namespace BytesTracker
 
             builder.Services.AddScoped<Dto.User>();
             builder.Services.AddScoped<Dto.Transaction>();
-
+            builder.Services.AddScoped<Dto.Tags>();
+            
 
 
 
