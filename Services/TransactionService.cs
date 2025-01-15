@@ -101,11 +101,11 @@ namespace BytesTracker.Services
                 case "Date":
                     if (sortForm.SortOrder == "High")
                     {
-                        sortTransancation = sortTransancation.OrderByDescending(trans => trans.created_at);
+                        sortTransancation = sortTransancation.OrderByDescending(trans =>  trans.due_at);
                     }
                     else
                     {
-                        sortTransancation = sortTransancation.OrderBy(t => t.created_at);
+                        sortTransancation = sortTransancation.OrderBy(t => t.due_at);
                     }
                     break;
 
@@ -157,6 +157,28 @@ namespace BytesTracker.Services
             }
 
             return await sortTransancation.ToListAsync();
+
+        }
+
+        public override async Task UpdateTransaction(Transaction transaction, Guid transid)
+        {
+
+            var existingTransaction = await _connection.Table<Transaction>()
+        .FirstOrDefaultAsync(trans => trans.id == transid);
+
+            if (existingTransaction != null)
+            {
+                existingTransaction.source = transaction.source;
+                existingTransaction.amount = transaction.amount;
+                existingTransaction.due_at = transaction.due_at;
+                existingTransaction.note = transaction.note;
+                existingTransaction.status = transaction.status;
+                existingTransaction.type = transaction.type;
+                existingTransaction.tagname = transaction.tagname;
+
+                await _connection.UpdateAsync(existingTransaction);
+            }
+
 
         }
     }

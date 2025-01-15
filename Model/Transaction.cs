@@ -25,7 +25,9 @@ namespace BytesTracker.Model
         [Column("created_at")]
         public DateTime created_at { get; set; } = DateTime.UtcNow.Date;
         [Column("due_at")]
-        public DateTime due_at { get; set; }
+        public DateTime? due_at { get; set; } 
+
+
         [Column("note")]
 
         public string note { get; set; }

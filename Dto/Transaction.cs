@@ -11,6 +11,7 @@ namespace BytesTracker.Dto
         public string Sources { get; set; }
         public int Value { get; set; }
         public DateTime? DueDate { get; set; }
+
         public string Note { get; set; }
         public string Status { get; set; }
         public string Type { get; set; }

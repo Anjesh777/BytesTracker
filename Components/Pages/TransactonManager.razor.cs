@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Components;
+using Microsoft.VisualBasic;
+using System.Transactions;
 
 namespace BytesTracker.Components.Pages
 {
@@ -27,6 +29,10 @@ namespace BytesTracker.Components.Pages
 
         private bool showTransPop = false;
         private bool showTransactionSuccessMessage = false;
+        private bool showTransactionFailureMessage = false;
+        private bool isEditMode = false;
+
+        private Model.Transaction currentTransaction = new();
 
 
 
@@ -114,9 +120,49 @@ namespace BytesTracker.Components.Pages
         {
             showTransPop = true;
         }
+        private async Task ShowTransEditMode(Model.Transaction transaction)
+        {
+            transactionDto = new Dto.Transaction
+            {
+                Sources = transaction.source,
+                Value = transaction.amount,
+                DueDate = transaction.due_at,
+                Status = transaction.status,
+                Type = transaction.type,
+                Note = transaction.note
+            };
+
+            tagDto.TagName = transaction.tagname;
+            currentTransaction = transaction;
+
+            showTransPop = true;
+            isEditMode = true;
+            StateHasChanged();
+        }
+
         private async void AddTransation() {
             var userName = await localStorage.GetItemAsync<string>("username");
             var userId = await userService.Get_UserID(userName);
+
+            if (transactionDto.Type.ToLower() == "debit") {
+
+                var currentTotalCredit = await transactioService.GetTotalCredit(userId);
+                var currentTotalDebit = await transactioService.GetTotalDebit(userId);
+                var currentBalance = currentTotalCredit - currentTotalDebit;
+                var newBalance = currentTotalCredit - transactionDto.Value;
+
+
+                if (newBalance < 0) {
+
+                    showTransactionSuccessMessage = false;
+                    showTransactionFailureMessage = true;
+                    errorMessage = "Transaction cant be added. Insufficent total balance";
+                    StateHasChanged();
+                    return;
+                
+                }
+
+            }
 
             showTransactionSuccessMessage = true;
 
@@ -146,11 +192,107 @@ namespace BytesTracker.Components.Pages
 
         }
 
+
         private async void ClosetransactionManagerPopUp()
         {
             showTransPop = false;
+            showTransactionFailureMessage = false;
+            showTransactionSuccessMessage = false;
+            transactionDto = new Dto.Transaction
+            {
+                Status = Helper.StatusType.Pendling.ToString(),
+                Type = Helper.SourceType.Debit.ToString()
+            };
+            tagDto = new Dto.Tags();
+            currentTransaction = new Model.Transaction();
+            isEditMode = false;
+            StateHasChanged();
+        }
+
+        private async Task UpdateTransaction()
+        {
+            try
+            {
+                var userName = await localStorage.GetItemAsync<string>("username");
+                var userId = await userService.Get_UserID(userName);
+                DateTime? dueAt;
 
 
+                if (transactionDto.Type.ToLower() == "debit")
+                {
+                    var currentTotalCredit = await transactioService.GetTotalCredit(userId);
+                    var currentTotalDebit = await transactioService.GetTotalDebit(userId);
+                    var currentBalance = currentTotalCredit - currentTotalDebit;
+
+                    if (isEditMode && currentTransaction.type.ToLower() == "debit")
+                    {
+                        currentBalance += currentTransaction.amount;
+                    }
+
+                    var newBalance = currentBalance - transactionDto.Value;
+
+                    if (newBalance < 0)
+                    {
+                        showTransactionSuccessMessage = false;
+                        showTransactionFailureMessage = true;
+                        errorMessage = "Transaction can't be updated. Insufficient total balance";
+                        StateHasChanged();
+                        return;
+                    }
+                }
+
+
+                if (transactionDto.Status == Helper.StatusType.Pendling.ToString())
+                {
+                    dueAt = (DateTime)transactionDto.DueDate;
+                }
+                else
+                {
+                    dueAt = null;
+                }
+
+                var updatedTransaction = new Model.Transaction
+                {
+                    id = currentTransaction.id,
+                    user_id = userId,
+                    source = transactionDto.Sources,
+                    amount = transactionDto.Value,
+                    due_at = dueAt,
+                    note = transactionDto.Note,
+                    status = transactionDto.Status,
+                    type = transactionDto.Type,
+                    tagname = tagDto.TagName
+                };
+
+                await transactioService.UpdateTransaction(updatedTransaction, currentTransaction.id);
+
+                userTransactions = await transactioService.GetTransactions(userId);
+                totalCredit = await transactioService.GetTotalCredit(userId);
+                totalDebit = await transactioService.GetTotalDebit(userId);
+                totalBalance = totalCredit - totalDebit;
+
+                showTransactionSuccessMessage = true;
+                await Task.Delay(1500);
+                ClosetransactionManagerPopUp();
+            }
+            catch (Exception ex)
+            {
+                showTransactionFailureMessage = true;
+                errorMessage = $"Failed to update transaction: {ex.Message}";
+            }
+        }
+
+
+        private async void AddOrUpdateTransaction()
+        {
+            if (isEditMode)
+            {
+                await UpdateTransaction();
+            }
+            else
+            {
+                AddTransation();
+            }
         }
 
         private void CloseErrorPopUp()
@@ -160,8 +302,6 @@ namespace BytesTracker.Components.Pages
             StateHasChanged();
 
         }
-
-        
 
         private void CloseSuccessPopUp()
         {
@@ -179,6 +319,7 @@ namespace BytesTracker.Components.Pages
 
         }
 
+
         private async Task TransanctionSort() {
 
             var userName = await localStorage.GetItemAsync<string>("username");
@@ -186,6 +327,7 @@ namespace BytesTracker.Components.Pages
             userTransactions = await transactioService.GetSortedTransaction(userId, sortFormDto);
             StateHasChanged();
         }
+
 
         private async Task HandleDeleteTag(int tagID)
         {
@@ -202,6 +344,15 @@ namespace BytesTracker.Components.Pages
             StateHasChanged();
         }
 
+        private void HandleStatus() {
+            if (transactionDto.Status != Helper.StatusType.Pendling.ToString())
+            {
+                transactionDto.DueDate = null;
+            }
+            StateHasChanged();
+
+
+        }
 
 
 
