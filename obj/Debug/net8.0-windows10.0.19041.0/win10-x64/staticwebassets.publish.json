@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0qS0FL23K/rnC0SYGrc6jdKAkvPj1SnGMXEtN3pPPtk=",
+  "Hash": "U3Y7R8Sk0uM5MQmUw1WcL8y10hnNDon/hnylA166NxM=",
   "Source": "BytesTracker",
   "BasePath": "/",
   "Mode": "Root",
@@ -148,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Identity": "D:\\ByteTracker\\BytesTracker\\wwwroot\\css\\dashboard.css",
+      "SourceId": "BytesTracker",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ByteTracker\\BytesTracker\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/dashboard.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\dashboard.css"
     },
     {
       "Identity": "D:\\ByteTracker\\BytesTracker\\wwwroot\\css\\transaction.css",

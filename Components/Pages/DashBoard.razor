@@ -1,0 +1,204 @@
+﻿@page "/Dashboard"
+@using MudBlazor
+
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject BytesTracker.Services.UserService userService
+@inject BytesTracker.Services.TagService tagService
+@inject BytesTracker.Services.TransactionService transactioService
+
+<div class="dashboard-container">
+    <div class="header">
+        <MudText Typo="Typo.h4" Class="title">Financial Dashboard</MudText>
+    </div>
+
+    <MudGrid Class="mt-4">
+        <MudItem xs="12" md="6">
+            <MudCard Elevation="3">
+                <MudCardHeader>
+                    <MudText Typo="Typo.h6">Financial Overview</MudText>
+                </MudCardHeader>
+                <MudCardContent>
+                    <div class="chart-container d-flex flex-column align-center">
+                        <MudPaper Class="pa-4 d-flex justify-center" Elevation="0">
+                            <MudChart ChartType="ChartType.Pie"
+                                      InputData="@data"
+                                      @bind-SelectedIndex="Index"
+                                      Width="300px"
+                                      Height="300px"
+                                      ChartOptions="new ChartOptions {
+                                        ChartPalette = colors
+                                    }" />
+                        </MudPaper>
+                        <div class="legend pa-4">
+                            @for (int i = 0; i < labels.Length; i++)
+                            {
+                                <div class="legend-item">
+                                    <span class="color-box" style="background-color: @colors[i]"></span>
+                                    <span class="label">@labels[i]: @(data != null ? $"{currencyCode} {data[i]:F2}" : "Loading...")</span>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+
+        <MudItem xs="12" md="6">
+            <MudCard Elevation="3">
+                <MudCardHeader>
+                    <MudText Typo="Typo.h6">Transaction Analysis</MudText>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudChart ChartType="ChartType.Bar"
+                              ChartSeries="@Series"
+                              XAxisLabels="@XAxisLabels"
+                              Width="100%"
+                              Height="350px">
+                        <CustomGraphics>
+                            <style>
+                                .chart-title {
+                                    font-family: "Helvetica", sans-serif;
+                                    font-weight: bold;
+                                }
+
+                                .chart-subtitle {
+                                    font-family: "Helvetica", sans-serif;
+                                    font-style: italic;
+                                    fill: #3e2cdd;
+                                }
+                            </style>
+                            <text x="50%" y="35" class="chart-title" text-anchor="middle">Top & Lowest</text>
+                            <text x="50%" y="70" class="chart-subtitle" text-anchor="middle">Transactions</text>
+                        </CustomGraphics>
+                    </MudChart>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+</div>
+
+
+
+
+
+<div class="form-container">
+    <h1 class="title">Debt Tracking</h1>
+
+
+
+
+        <div class="table-controls" style="display:flex">
+
+
+           
+            <div class="sort-box" style="display:flex">
+                <select >
+
+                    <option>Sort by</option>
+                    <option value="Date">Date</option>
+                    <option value="Amount">Amount</option>
+                    <option value="Debit">Debit</option>
+                    <option value="Credit">Credit</option>
+                    <option value="Tag">Tag</option>
+                </select>
+
+
+            </div>
+
+        </div>
+
+    <table class="tags-table">
+        <thead>
+            <tr>
+                <th style="width:15%;">Transaction ID</th>
+                <th style="width:10%;">Created Date</th>
+                <th style="width:10%;">Due Date</th>
+                <th style="width:10%;">Status</th>
+                <th style="width:15%;">Source</th>
+                <th style="width:5%;">Amount</th>
+                <th style="width:10%;">Tag</th>
+                <th style="width:20%;">Note</th>
+                <th style="width:3%;">Actions</th>
+
+            </tr>
+
+        </thead>
+        <tbody>
+            @{
+                transactioncounter = 15;
+                int remainingTransactio = transactioncounter;
+            }
+
+
+            @foreach (var transaction in userTransactions)
+            {
+
+                @if (transaction.type=="Debit" ) { 
+
+                <tr>
+                    <td>@transaction.id</td>
+                    <td>@transaction.created_at</td>
+                    @if (transaction.due_at == null)
+                    {
+                        <td>Due date of debt clered</td>
+                    }
+                    else
+                    {
+                        <td>@transaction.due_at</td>
+
+                    }
+                    @if (transaction.status == "Pendling")
+                    {
+                        <td style="color:red">@transaction.status</td>
+                    }
+                    else
+                    {
+                        <td style="color:green">@transaction.status</td>
+                    }
+                    <td>@transaction.source</td>
+                    <td>@transaction.amount</td>
+                    <td>@transaction.tagname </td>
+                    <td>@transaction.note </td>
+                    <td>
+                            @if (transaction.status == "Cleared")
+                            {
+                                <span class="text-success">
+                                    <i class="bi bi-check-circle-fill" style="font-size: 1.2rem;"></i>
+                                </span>
+                            }
+                            else
+                            {
+                                <button class="btn btn-primary btn-sm" style="font-size: 0.85rem; padding: 0.25rem 0.5rem; background: green;" @onclick="() => ClearDebt(transaction)">
+                                    <i class="oi oi-pencil"></i> Clear
+                                </button>
+                            }
+                    </td>
+
+                </tr>
+
+                remainingTransactio--;
+
+                }
+            }
+            @for (int i = 1; i < remainingTransactio; i++)
+            {
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+            }
+         
+
+        </tbody>
+    </table>
+    
+</div>

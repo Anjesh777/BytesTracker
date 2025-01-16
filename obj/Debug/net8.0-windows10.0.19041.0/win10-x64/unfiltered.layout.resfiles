@@ -65,6 +65,7 @@ AboutAssets.txt
 wwwroot\css\app.css
 wwwroot\css\bootstrap\bootstrap.min.css
 wwwroot\css\bootstrap\bootstrap.min.css.map
+wwwroot\css\dashboard.css
 wwwroot\css\transaction.css
 wwwroot\css\transation2.css
 wwwroot\favicon.png

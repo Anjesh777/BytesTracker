@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.VisualBasic;
+using MudBlazor;
 using System.Transactions;
 
 namespace BytesTracker.Components.Pages
@@ -66,6 +67,18 @@ namespace BytesTracker.Components.Pages
 
         private Helper.StatusType selectedStatus = Helper.StatusType.Pendling;
 
+        public List<ChartSeries> Series = new List<ChartSeries>()
+    {
+        new ChartSeries() { Name = "United States", Data = new double[] { 40, 20, 25, 27, 46, 60, 48, 80, 15 } },
+        new ChartSeries() { Name = "Germany", Data = new double[] { 19, 24, 35, 13, 28, 15, 13, 16, 31 } },
+        new ChartSeries() { Name = "Sweden", Data = new double[] { 8, 6, 11, 13, 4, 16, 10, 16, 18 } },
+    };
+
+
+
+
+
+
         private async void onSortChange(ChangeEventArgs e) {
 
             selectedSortOption = e.Value.ToString();
@@ -108,7 +121,7 @@ namespace BytesTracker.Components.Pages
 
 
 
-        private void StripCurency() {
+        public void StripCurency() {
 
             var currencyCombined = userDto.Currency.Split('-');
             currencyCode = currencyCombined[0];
@@ -140,57 +153,7 @@ namespace BytesTracker.Components.Pages
             StateHasChanged();
         }
 
-        private async void AddTransation() {
-            var userName = await localStorage.GetItemAsync<string>("username");
-            var userId = await userService.Get_UserID(userName);
-
-            if (transactionDto.Type.ToLower() == "debit") {
-
-                var currentTotalCredit = await transactioService.GetTotalCredit(userId);
-                var currentTotalDebit = await transactioService.GetTotalDebit(userId);
-                var currentBalance = currentTotalCredit - currentTotalDebit;
-                var newBalance = currentTotalCredit - transactionDto.Value;
-
-
-                if (newBalance < 0) {
-
-                    showTransactionSuccessMessage = false;
-                    showTransactionFailureMessage = true;
-                    errorMessage = "Transaction cant be added. Insufficent total balance";
-                    StateHasChanged();
-                    return;
-                
-                }
-
-            }
-
-            showTransactionSuccessMessage = true;
-
-            var transaction = new Model.Transaction()
-            {
-                user_id = userId,
-                source = transactionDto.Sources,
-                amount = transactionDto.Value,
-                due_at = (DateTime)transactionDto.DueDate,
-                note = transactionDto.Note,
-                status = transactionDto.Status,
-                type = transactionDto.Type,
-                tagname = tagDto.TagName
-            };
-
-            await transactioService.AddTransaction(transaction);
-            await Task.Delay(1500);
-            userTransactions = await transactioService.GetTransactions(userId);
-            totalCredit = await transactioService.GetTotalCredit(userId);
-            totalDebit = await transactioService.GetTotalDebit(userId);
-            totalBalance = totalCredit - totalDebit;
-
-
-
-            StateHasChanged();
-
-
-        }
+        
 
 
         private async void ClosetransactionManagerPopUp()
@@ -208,6 +171,73 @@ namespace BytesTracker.Components.Pages
             isEditMode = false;
             StateHasChanged();
         }
+        private async void AddTransation()
+        {
+            try
+            {
+                var userName = await localStorage.GetItemAsync<string>("username");
+                var userId = await userService.Get_UserID(userName);
+
+                if (transactionDto.Type.ToLower() == "debit")
+                {
+                    var currentTotalCredit = await transactioService.GetTotalCredit(userId);
+                    var currentTotalDebit = await transactioService.GetTotalDebit(userId);
+                    var currentBalance = currentTotalCredit - currentTotalDebit;
+
+                    if (transactionDto.Value <= 0)
+                    {
+                        showTransactionSuccessMessage = false;
+                        showTransactionFailureMessage = true;
+                        errorMessage = "Transaction value must be greater than zero.";
+                        StateHasChanged();
+                        return;
+                    }
+
+                    var newBalance = currentBalance - transactionDto.Value;
+
+                    if (newBalance < 0)
+                    {
+                        showTransactionSuccessMessage = false;
+                        showTransactionFailureMessage = true;
+                        errorMessage = "Transaction can't be added. Insufficient total balance.";
+                        StateHasChanged();
+                        return;
+                    }
+                }
+
+                var transaction = new Model.Transaction()
+                {
+                    user_id = userId,
+                    source = transactionDto.Sources,
+                    amount = transactionDto.Value,
+                    due_at = (DateTime?)transactionDto.DueDate,
+                    note = transactionDto.Note,
+                    status = transactionDto.Status,
+                    type = transactionDto.Type,
+                    tagname = tagDto.TagName
+                };
+
+                await transactioService.AddTransaction(transaction);
+
+                await Task.Delay(1500);
+                userTransactions = await transactioService.GetTransactions(userId);
+                totalCredit = await transactioService.GetTotalCredit(userId);
+                totalDebit = await transactioService.GetTotalDebit(userId);
+                totalBalance = totalCredit - totalDebit;
+
+                showTransactionSuccessMessage = true;
+                showTransactionFailureMessage = false;
+                StateHasChanged();
+            }
+            catch (Exception ex)
+            {
+                showTransactionSuccessMessage = false;
+                showTransactionFailureMessage = true;
+                errorMessage = $"Failed to add transaction: {ex.Message}";
+                StateHasChanged();
+            }
+        }
+
 
         private async Task UpdateTransaction()
         {

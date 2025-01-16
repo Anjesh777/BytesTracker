@@ -49,6 +49,9 @@
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\wwwroot\css\bootstrap\bootstrap.min.css.map">
       <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css.map</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\wwwroot\css\dashboard.css">
+      <PackagePath>wwwroot\css\dashboard.css</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\wwwroot\css\transaction.css">
       <PackagePath>wwwroot\css\transaction.css</PackagePath>
     </AppxPackagedFile>

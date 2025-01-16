@@ -11,8 +11,8 @@ namespace BytesTracker.Helper
     enum StatusType
     {
         Pendling,
-        Normal,
-        Completed
+        Normal
+        
     }
 
 }

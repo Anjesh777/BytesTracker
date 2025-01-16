@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-01-15T08:08:41.986</Modified>
+      <Modified>2025-01-16T12:03:03.332</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-01-05T12:30:57.017</Modified>
+      <Modified>2025-01-16T06:19:10.345</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\BytesTracker.runtimeconfig.json">
       <PackagePath>BytesTracker.runtimeconfig.json</PackagePath>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\BytesTracker.dll">
       <PackagePath>BytesTracker.dll</PackagePath>
-      <Modified>2025-01-15T08:08:41.797</Modified>
+      <Modified>2025-01-16T12:03:03.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>BytesTracker.exe</PackagePath>
-      <Modified>2025-01-15T08:08:41.801</Modified>
+      <Modified>2025-01-16T12:03:03.125</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -66,6 +66,10 @@
       <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css.map</PackagePath>
       <Modified>2024-12-18T13:16:06.708</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\wwwroot\css\dashboard.css">
+      <PackagePath>wwwroot\css\dashboard.css</PackagePath>
+      <Modified>2025-01-16T11:44:05.678</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\wwwroot\css\transaction.css">
       <PackagePath>wwwroot\css\transaction.css</PackagePath>
       <Modified>2025-01-04T07:06:10.158</Modified>
@@ -80,7 +84,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\wwwroot\index.html">
       <PackagePath>wwwroot\index.html</PackagePath>
-      <Modified>2025-01-03T17:42:20.522</Modified>
+      <Modified>2025-01-16T06:18:44.040</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\ByteTracker\BytesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>

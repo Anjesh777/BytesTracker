@@ -260,7 +260,7 @@
                             <td>@transaction.created_at</td>
                             @if (transaction.due_at==null)
                             {
-                                <td>No Due Date for Normal Transction</td>
+                                <td>------------</td>
                            }
                            else{
                             <td>@transaction.due_at</td>
@@ -284,8 +284,6 @@
                                     <i class="oi oi-pencil" ></i> Edit
                                 </button>
                             </td>
-
-
                         </tr>
 
                         remainingTransactio--; 
@@ -307,6 +305,7 @@
                         </tr>
 
                     }
+
 
                 </tbody>
             </table>

@@ -16,5 +16,11 @@ namespace BytesTracker.Repository
         public abstract Task UpdateTransaction(Transaction transaction, Guid id);
         public abstract Task<List<Transaction>> GetSortedTransaction(int userId, BytesTracker.Dto.SortFormDTO sortFormDTO);
 
+        public abstract Task UpdateTransactionStatus(Transaction transaction);
+
+        public abstract Task<List<Transaction>> TotalCleard(int userId);
+        public abstract Task<decimal> GetTotalCleard(int userId);
+
+
     }
 }

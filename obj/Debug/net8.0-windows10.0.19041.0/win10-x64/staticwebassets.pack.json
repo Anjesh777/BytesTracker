@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
+      "Id": "D:\\ByteTracker\\BytesTracker\\wwwroot\\css\\dashboard.css",
+      "PackagePath": "staticwebassets\\css\\dashboard.css"
+    },
+    {
       "Id": "D:\\ByteTracker\\BytesTracker\\wwwroot\\css\\transaction.css",
       "PackagePath": "staticwebassets\\css\\transaction.css"
     },

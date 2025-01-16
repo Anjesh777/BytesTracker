@@ -62,6 +62,26 @@ namespace BytesTracker.Services
             return debit.Sum(totaldebit => totaldebit.amount);
         }
 
+        public override async Task<List<Transaction>> TotalCleard(int userId) {
+
+            return await _connection.Table<Transaction>()
+                .Where(transaction => transaction.user_id == userId && transaction.status.ToLower() == "cleared")
+                .ToListAsync();
+
+        }
+
+
+        public override async Task<decimal> GetTotalCleard(int userId)
+        {
+
+            var clear = await TotalCleard(userId);
+            return clear.Sum(totaldebit => totaldebit.amount);
+        }
+
+
+
+
+
         public override async Task<List<Transaction>> GetSortedTransaction(int userId, Dto.SortFormDTO sortForm)
         {
             var sortTransancation = _connection.Table<Transaction>()
@@ -181,5 +201,28 @@ namespace BytesTracker.Services
 
 
         }
+
+        public override async Task UpdateTransactionStatus(Transaction transaction)
+        {
+
+            var existingTransaction = await _connection.Table<Transaction>()
+               .FirstOrDefaultAsync(trans => trans.id == transaction.id);
+
+            if (existingTransaction != null)
+            {
+                existingTransaction.source = transaction.source;
+                existingTransaction.amount = transaction.amount;
+                existingTransaction.due_at = null;
+                existingTransaction.note = transaction.note;
+                existingTransaction.status = "Cleared";
+                existingTransaction.type = transaction.type;
+                existingTransaction.tagname = transaction.tagname;
+
+                await _connection.UpdateAsync(existingTransaction);
+
+            }
+
+        }
+
     }
 }
