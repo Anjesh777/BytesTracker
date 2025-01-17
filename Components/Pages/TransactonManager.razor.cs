@@ -67,15 +67,7 @@ namespace BytesTracker.Components.Pages
 
         private Helper.StatusType selectedStatus = Helper.StatusType.Pendling;
 
-        public List<ChartSeries> Series = new List<ChartSeries>()
-    {
-        new ChartSeries() { Name = "United States", Data = new double[] { 40, 20, 25, 27, 46, 60, 48, 80, 15 } },
-        new ChartSeries() { Name = "Germany", Data = new double[] { 19, 24, 35, 13, 28, 15, 13, 16, 31 } },
-        new ChartSeries() { Name = "Sweden", Data = new double[] { 8, 6, 11, 13, 4, 16, 10, 16, 18 } },
-    };
-
-
-
+   
 
 
 

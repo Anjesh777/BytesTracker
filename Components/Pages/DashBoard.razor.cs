@@ -113,6 +113,76 @@ namespace BytesTracker.Components.Pages
 
         }
 
+
+        protected async Task OnSortChange(ChangeEventArgs e)
+        {
+            try
+            {
+                var selectedValue = e.Value.ToString();
+
+                if (string.IsNullOrEmpty(selectedValue) || selectedValue == "default")
+                {
+                    var topTrans = userTransactions.OrderByDescending(trans => trans.amount).Take(5).ToList();
+                    var lowTrans = userTransactions.OrderBy(trans => trans.amount).Take(5).ToList();
+
+                    Series = new List<ChartSeries>
+            {
+                new ChartSeries
+                {
+                    Name = "Top 5 Transactions",
+                    Data = topTrans.Select(trans => (double)trans.amount).ToArray()
+                },
+                new ChartSeries
+                {
+                    Name = "Lowest 5 Transactions",
+                    Data = lowTrans.Select(trans => (double)trans.amount).ToArray()
+                }
+            };
+
+                    XAxisLabels = topTrans.Select(trans => trans.source).Concat(lowTrans.Select(trans => trans.source)).ToArray();
+                }
+                else if (selectedValue == "High")
+                {
+                    var sortedTrans = userTransactions.OrderByDescending(trans => trans.amount).Take(5).ToList();
+
+                    Series = new List<ChartSeries>
+            {
+                new ChartSeries
+                {
+                    Name = "Top 5 Transactions (High to Low)",
+                    Data = sortedTrans.Select(trans => (double)trans.amount).ToArray()
+                }
+            };
+
+                    XAxisLabels = sortedTrans.Select(trans => trans.source).ToArray();
+                }
+                else if (selectedValue == "Low")
+                {
+                    var sortedTrans = userTransactions.OrderBy(trans => trans.amount).Take(5).ToList();
+
+                    Series = new List<ChartSeries>
+            {
+                new ChartSeries
+                {
+                    Name = "Top 5 Transactions (Low to High)",
+                    Data = sortedTrans.Select(trans => (double)trans.amount).ToArray()
+                }
+            };
+
+                    XAxisLabels = sortedTrans.Select(trans => trans.source).ToArray();
+                }
+
+                StateHasChanged();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error updating chart data: {ex.Message}");
+            }
+        }
+
+
+
+
         protected override async Task OnInitializedAsync()
         {
             try
@@ -155,6 +225,7 @@ namespace BytesTracker.Components.Pages
                 };
 
                 await LoadChartData();
+                StateHasChanged();
 
 
             }

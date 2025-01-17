@@ -43,6 +43,15 @@
             </MudCard>
         </MudItem>
 
+          <div class="sort-box" style="display:flex; width:90px; margin-left:90%">
+            <select @onchange="OnSortChange">
+                <option value="default">Sort by</option>
+                <option value="High">High</option>
+                <option value="Low">Low</option>
+            </select>
+
+
+            </div>
         <MudItem xs="12" md="6">
             <MudCard Elevation="3">
                 <MudCardHeader>
